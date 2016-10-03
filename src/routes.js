@@ -9,6 +9,7 @@ export default () => {
       <Route path="/" component={App} >
         <IndexRoute component={UI} />
       </Route>
+      <Route path="*" component={UI} />
     </Route>
   );
 };
