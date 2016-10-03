@@ -10,12 +10,15 @@ import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
 import { render } from 'react-dom';
 import { setPageName } from './components/helpers/omniture/page-name';
 import { removeNoJS } from './core/remove-no-js';
+import { createStore } from 'redux'
 import { Provider } from 'react-redux';
+import { getStore } from './store';
 import useScroll from 'react-router-scroll';
 
 let cssContainer = document.getElementById('css');
 const appContainer = document.getElementById('app');
 const currentNodeEnv = process.env.NODE_ENV;
+const store = getStore();
 
 // This is need here so AdobeDTM can use it for tracking
 window.jQuery = require('jquery');
@@ -42,7 +45,6 @@ function customEvent() {
 }
 
 customEvent();
-
 
 const context = {
   constants,
@@ -117,7 +119,7 @@ function run() {
   }
 
   render(
-    <Provider>
+    <Provider store={store}>
       <ContextHolder context={context}>
         <Router
           history={browserHistory}

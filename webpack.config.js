@@ -4,7 +4,8 @@ import extend from 'extend';
 import AssetsPlugin from 'assets-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import Visualizer from 'webpack-visualizer-plugin';
-const releaseNumber = 'adobe';
+
+const releaseNumber = 'xx';
 
 const DEBUG = !(process.argv.includes('--release') || process.argv.includes('--yorklab'));
 const YLB = process.argv.includes('--yorklab');

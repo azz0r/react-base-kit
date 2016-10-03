@@ -15,7 +15,9 @@ import constants from './constants/main';
 import { port } from './config';
 import { match, RouterContext } from 'react-router';
 import { Provider } from 'react-redux';
+import { getStore } from './store';
 
+const store = getStore(true);
 const server = global.server = express();
 const currentNodeEnv = process.env.NODE_ENV;
 
@@ -66,7 +68,7 @@ server.get('*', async (req, res, next) => {
       };
 
       data.body = ReactDOM.renderToString(
-        <Provider>
+        <Provider store={store}>
           <ContextHolder context={context}>
             <RouterContext {...renderProps} />
           </ContextHolder>
@@ -79,7 +81,6 @@ server.get('*', async (req, res, next) => {
 
       const html = ReactDOM.renderToStaticMarkup(<Html
         openTagUrl={constants.openTagUrl}
-        bvJsApiUrl={constants.bvJsApiUrl}
         dtmUrl={constants.dtmUrl} {...data} />);
 
       res.status(statusCode);
