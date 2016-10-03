@@ -1,7 +1,9 @@
 import React from 'react';
 import Page from '../components/page';
 // eslint-disable-next-line
-import Mbox from '../components/page'; //'../public/mobile/javascripts/at-react-component-0.2.0';
+import { createMboxComponent } from
+  '../public/javascript/at-react-component-0.2.0';
+const Mbox = createMboxComponent();
 
 export default class UI extends React.Component {
 
