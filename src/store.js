@@ -12,7 +12,6 @@ export function getStore(server = false) {
     storeEnhancer = compose(
       applyMiddleware(ReduxThunk),
       persistState(),
-      // chrome debugger
       typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
         ? window.devToolsExtension()
         : f => f
@@ -20,7 +19,7 @@ export function getStore(server = false) {
   }
 
   const combinedReducers = combineReducers({
-    setCompareReducer: setCompareReducer
+    setCompareReducer
   });
 
   return createStore(combinedReducers, storeEnhancer);
