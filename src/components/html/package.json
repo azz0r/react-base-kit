@@ -1,0 +1,13 @@
+{
+  "name": "html",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./html.js",
+  "contributors": [
+    {
+      "name": "Aaron Lote",
+      "email": "aaron.lote@gmail.com",
+      "web": "http://www.aaronlote.com"
+    }
+  ]
+}
