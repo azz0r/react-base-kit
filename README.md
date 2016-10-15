@@ -1,4 +1,6 @@
-### 📕 Index
+#React Base Kit
+
+## 📕 Index
 * [Installing](#installing)
 * [Launching](#launching)
 * [Testing](#testing)
@@ -9,15 +11,19 @@ npm cache clean;
 npm install
 npm run start;
 ```
+or
+```
+yarn
+```
 
 ### 🚀 <a name="launching">Launching</a>
-* Development stack ```npm run start```
-* Build production stack ```npm run build:production```
+* Development ```npm run start```
+* Build  ```npm run build```
+* Test  ```npm run test```
 
 ### 💪 <a name="testing">Testing</a>
 Powered by Mocha, Chai, Enzyme, Sinon.
 
-* Run unit tests ```npm run test:unit```
-* Run unit tests with watch, any changes result in a re-run ```npm run test:unit:watch```
+* Run unit tests ```npm run test```
 
 Tests are written by creating .spec files: `src/components/4Q/__tests__/`
