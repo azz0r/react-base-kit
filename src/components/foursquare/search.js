@@ -2,14 +2,18 @@ import React from 'react'
 import request from 'superagent'
 import Loading from '../loading/loading'
 import config from './config'
+import * as SearchActions from '../../actions/searches'
 import _debounce from 'lodash.debounce'
+import { connect } from 'react-redux'
 
-export default class Search extends React.Component {
+class Search extends React.Component {
 
   displayName = 'Search'
 
   static propTypes = {
-    onSearchUpdated: React.propTypes.func.isRequired
+    dispatch: React.PropTypes.func.isRequired,
+    searches: React.PropTypes.array,
+    onSearchUpdated: React.propTypes.func.isRequired,
   }
 
   state = {
@@ -23,10 +27,12 @@ export default class Search extends React.Component {
   componentWillMount() {
     this.delayedCallback = _debounce((event) => {
       let query = event.target.value
-
       this.setState({
         loading: true
       })
+      this.props.dispatch(
+        SearchActions.searchMade(query)
+      )
       this.openRequest = request.get(`
         ${config.apiUrl}?query=${query}&client_id=${config.clientId}&client_secret=${config.clientSecret}&style=${config.style}&v=${config.v}&ll=${this.state.long},${this.state.lat}`)
         .accept('json')
@@ -71,6 +77,7 @@ export default class Search extends React.Component {
   }
 
   render() {
+    console.log(this.props.searches)
     return (
       <div className="search">
         <div className="row">
@@ -102,8 +109,28 @@ export default class Search extends React.Component {
             </If>
           </div>
         </div>
+        <If condition={this.props.searches.length > 0}>
+          <div className="row previous-search">
+            <div className="col-xs-12">
+              <h4 className="previous-search__header">
+                Previous searches
+              </h4>
+              {this.props.searches.map((query, key) => {
+                return (
+                  <span
+                    key={key}
+                    className="label label-info previous-search__label">
+                    {query}
+                  </span>
+                )
+              })}
+            </div>
+          </div>
+        </If>
       </div>
     )
   }
-
 }
+export default connect(state => ({
+  searches: state.searches,
+}))(Search)

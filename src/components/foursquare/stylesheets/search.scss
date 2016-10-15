@@ -6,10 +6,16 @@
     float: right;
   }
   &__container {}
-  &__location-button { 
+  &__location-button {
     right: 20px;
   }
   &__icon {
     right: 20px;
+  }
+}
+.previous-search {
+  &__header {}
+  &__label {
+    margin-right: 10px;
   }
 }
