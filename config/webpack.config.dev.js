@@ -5,7 +5,7 @@ require('./environment')
 const defaultConfig = require('./webpack.common')
 
 const devConfig = Object.assign({}, defaultConfig, {
-  devtool: "eval-cheap-module-source-map",
+  devtool: "source-map",
   devServer: {
     contentBase: './dist/',
     hot: true,
