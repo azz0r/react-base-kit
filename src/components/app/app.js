@@ -1,40 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import Head from '../head/head'
+import '../../stylesheets/base'
 
-export default class App extends React.Component {
 
-  static propTypes = {
-    children: React.PropTypes.element,
-    location: React.PropTypes.object.isRequired,
-    params: React.PropTypes.object,
-    error: React.PropTypes.object,
-    dispatch: React.PropTypes.func
-  };
-
-  static childContextTypes = {
-    location: React.PropTypes.object.isRequired,
-    params: React.PropTypes.object
-  };
-
-  getChildContext() {
-    // const context = this.props.context; @mike is this needed
-    return {
-      location: this.props.location,
-      params: this.props.params || {}
-    };
-  }
-
-  /**
-  * render
-  * @return {ReactElement} markup
-  */
+export default class Application extends Component {
   render() {
-    return this ? (
-      <div>
-        {React.cloneElement(this.props.children, {
-          key: this.props.location.pathname
-        })}
+    return (
+      <div className="container">
+        <Head />
+        <header className="foursquare__header">
+          <h1>FourSquare Popular Venues Search</h1>
+        </header>
+        {this.props.children}
+        <Link to={'/'}>
+          Search
+        </Link> | <Link to={'/about'}>
+          About
+        </Link>
       </div>
-    ) : this.props.children;
+    )
   }
-
 }
