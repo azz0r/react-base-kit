@@ -77,7 +77,6 @@ class Search extends React.Component {
   }
 
   render() {
-    console.log(this.props.searches)
     return (
       <div className="search">
         <div className="row">

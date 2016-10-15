@@ -6,6 +6,5 @@ export default (state = [], action) => {
       default:
     break
   }
-  console.log(state)
   return state
 }

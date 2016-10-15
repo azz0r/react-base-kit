@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
-import Helmet from "react-helmet";
+import Helmet from "react-helmet"
 
 export default class Head extends Component {
+
+  static contextTypes = {
+    constants: React.PropTypes.object.isRequired
+  }
 
   displayName = "Head"
 
@@ -10,6 +14,7 @@ export default class Head extends Component {
       <Helmet
         titleTemplate="%s - Welcome"
         defaultTitle="Welcome"
+        base={{"href": this.context.constants.baseUrl}}
       />
     )
   }

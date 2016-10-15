@@ -1,4 +1,7 @@
+import constants from '../../constants'
+
 export const context = {
+  constants,
   onSetTitle: (value) => (document.title = value),
   onSetMeta: (name, content) => {
     const elements = document.getElementsByTagName('meta')
