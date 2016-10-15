@@ -22,7 +22,6 @@ const devConfig = Object.assign({}, defaultConfig, {
   stats: true,
   progress: true,
 })
-
 devConfig.plugins.push(
   new webpack.HotModuleReplacementPlugin()
 )
