@@ -6,6 +6,11 @@ const defaultConfig = require('./webpack.common')
 
 const devConfig = Object.assign({}, defaultConfig, {
   devtool: "eval-cheap-module-source-map",
+  devServer: {
+    contentBase: './dist/',
+    hot: true,
+    historyApiFallback: true
+  },
   entry: {
     vendors: ['react', 'react-dom', 'lodash.debounce', 'react-helmet', 'react-router', 'superagent'],
     devServer: require.resolve('webpack-dev-server/client') + '?/',
