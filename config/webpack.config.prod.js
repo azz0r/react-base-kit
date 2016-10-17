@@ -25,6 +25,9 @@ prodConfig.plugins.push(
     mangle: true,
   })
 )
+prodConfig.plugins.push(
+  new ExtractTextPlugin('static/css/[name].[hash:8].css')
+)
 
 prodConfig.module.loaders.push(
   {
