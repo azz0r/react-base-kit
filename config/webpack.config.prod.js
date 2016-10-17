@@ -10,6 +10,12 @@ const prodConfig = Object.assign({}, defaultConfig, {
     vendors: ['react', 'react-dom', 'lodash.debounce', 'react-helmet', 'react-router', 'superagent'],
     polyfill: require.resolve('./polyfills'),
     app: path.join(paths.appSrc, 'index'),
+  },
+  output: {
+    publicPath: "https://azz0r.github.io/react-base-kit/",
+    path: paths.appBuild,
+    filename: "static/js/[name].[hash:8].bundle.js",
+    chunkFilename: "static/js/[id].[hash:8].chunk.js",
   }
 })
 
