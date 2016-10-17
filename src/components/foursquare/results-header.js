@@ -11,8 +11,8 @@ export default class ResultsHeader extends React.Component {
 
   render() {
     return (
-      <div className="results-header">
-        <h2 className="results-header__title">
+      <div className="results">
+        <h2 className="results__title">
           Results for "{this.props.query}" ({this.props.total})
         </h2>
       </div>

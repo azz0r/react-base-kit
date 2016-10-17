@@ -1,8 +1,10 @@
+header h1 {
+  color: #2d5bde;
+}
+
 .foursquare {
   font-family: normal 13px/140% "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif;
-  &__results {
-    color: #2D5BDE;
-  }
+  &__results {}
 }
 
 @import 'search';

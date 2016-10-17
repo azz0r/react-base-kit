@@ -3,13 +3,12 @@ import { Link } from 'react-router'
 import Head from '../head/head'
 import '../../stylesheets/base'
 
-
-export default class Application extends Component {
+export default class Page extends Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <Head />
-        <header className="foursquare__header">
+        <header>
           <h1>FourSquare Popular Venues Search</h1>
         </header>
         {this.props.children}

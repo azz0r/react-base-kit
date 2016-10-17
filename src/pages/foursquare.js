@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Page from '../components/page/page'
 import Foursquare from '../components/foursquare/foursquare'
 import Helmet from "react-helmet";
 
@@ -8,10 +9,10 @@ export default class PageFoursquare extends Component {
 
   render() {
     return (
-      <div>
+      <Page>
         <Helmet title="FourSquare Venues Search" />
         <Foursquare />
-      </div>
+      </Page>
     )
   }
 }

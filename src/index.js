@@ -25,8 +25,8 @@ export const Container = (
 try {
   ReactDOM.render(Container, rootEl)
   if (module.hot) {
-    module.hot.accept('./components/app/app', () => {
-      const NextApp = require('./components/app/app').default
+    module.hot.accept('./components/page/page', () => {
+      const NextApp = require('./components/page/page').default
       ReactDOM.render(
         <HmrContainer>
           <NextApp />

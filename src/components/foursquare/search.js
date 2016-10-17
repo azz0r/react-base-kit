@@ -22,6 +22,7 @@ class Search extends React.Component {
     long: 51.481364199999994,
     lat: -0.12015400000000001,
     loading: false,
+    maxSearches: 10,
   }
 
   componentWillMount() {
@@ -114,7 +115,9 @@ class Search extends React.Component {
               <h4 className="previous-search__header">
                 Previous searches
               </h4>
-              {this.props.searches.map((query, key) => {
+              {this.props.searches
+                  .slice(Math.max(this.props.searches.length - this.state.maxSearches, 1))
+                  .map((query, key) => {
                 return (
                   <span
                     key={key}
