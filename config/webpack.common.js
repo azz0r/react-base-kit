@@ -9,7 +9,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   output: {
     publicPath: "/",
-    path: paths.appBuild,
+    path: paths.build.root,
     filename: "static/js/[name].[hash:8].bundle.js",
     chunkFilename: "static/js/[id].[hash:8].chunk.js",
   },
@@ -24,7 +24,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: paths.appHtml,
+      template: paths.app.indexHtml,
     }),
   ],
   resolve: {
@@ -43,7 +43,7 @@ module.exports = {
     }
   },
   resolveLoader: {
-    root: paths.ownNodeModules,
+    root: paths.app.nodeModules,
     moduleTemplates: ['*-loader'],
   },
   postcss: [
@@ -57,7 +57,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         include: [
-          paths.appSrc,
+          paths.app.root,
         ],
         query: {
           cacheDirectory: true,
@@ -78,7 +78,7 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.app.root, paths.app.nodeModules],
         loader: 'json'
       },
       {
@@ -88,7 +88,7 @@ module.exports = {
       },
       {
         test: /\.(ot|svg|woff|woff2)(\?.*)?$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.app.root, paths.app.nodeModules],
         loader: 'file',
         query: {
           name: 'static/media/[name].[hash:8].[ext]',

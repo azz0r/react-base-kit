@@ -9,11 +9,11 @@ const prodConfig = Object.assign({}, defaultConfig, {
   entry: {
     vendors: ['react', 'react-dom', 'lodash.debounce', 'react-helmet', 'react-router', 'superagent'],
     polyfill: require.resolve('./polyfills'),
-    app: path.join(paths.appSrc, 'index'),
+    app: path.join(paths.app.root, 'index'),
   },
   output: {
     publicPath: "https://azz0r.github.io/react-base-kit/",
-    path: paths.appBuild,
+    path: paths.build.root,
     filename: "static/js/[name].[hash:8].bundle.js",
     chunkFilename: "static/js/[id].[hash:8].chunk.js",
   }
@@ -29,7 +29,10 @@ prodConfig.plugins.push(
 prodConfig.module.loaders.push(
   {
     test: /\.scss$/,
-    loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?sourceMap'),
+    loader: ExtractTextPlugin.extract(
+      'style',
+      'css!postcss!sass?sourceMap',
+    ),
   }
 )
 

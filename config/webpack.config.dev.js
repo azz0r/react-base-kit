@@ -16,7 +16,7 @@ const devConfig = Object.assign({}, defaultConfig, {
     devServer: require.resolve('webpack-dev-server/client') + '?/',
     hot: require.resolve('webpack/hot/dev-server'),
     polyfills: require.resolve('./polyfills'),
-    app: path.join(paths.appSrc, 'index'),
+    app: path.join(paths.app.root, 'index'),
   },
   watch: true,
   stats: true,
