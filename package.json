@@ -1,7 +1,6 @@
 {
-  "name": "foursquare-react-popular-locations",
-  "version": "0.0.1",
-  "private": true,
+  "name": "react-base-kit",
+  "version": "0.0.2",
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard node ./scripts/start.js",
     "build": "NODE_ENV=production webpack-dashboard -- node ./scripts/build.js",
@@ -27,7 +26,6 @@
     "babel-preset-es2016": "6.11.3",
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "babel-preset-stage-0-kneden": "^2.0.0",
     "babel-runtime": "6.11.6",
     "case-sensitive-paths-webpack-plugin": "1.1.2",
     "chai": "^3.5.0",
@@ -87,7 +85,6 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
-    "redux-batch-middleware": "^0.2.0",
     "redux-localstorage": "^0.4.1",
     "redux-reset": "^0.2.0",
     "superagent": "^2.3.0"

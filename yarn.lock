@@ -933,12 +933,6 @@ babel-preset-react@6.11.1:
     babel-plugin-transform-react-jsx-self "^6.11.0"
     babel-plugin-transform-react-jsx-source "^6.3.13"
 
-babel-preset-stage-0-kneden@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-stage-0-kneden/-/babel-preset-stage-0-kneden-2.0.0.tgz#2a3d84bc22290d2515f80eb422ac8ee9d49bde73"
-  dependencies:
-    modify-babel-preset "^2.0.3"
-
 babel-preset-stage-0@^6.5.0:
   version "6.16.0"
   resolved "https://registry.yarnpkg.com/babel-preset-stage-0/-/babel-preset-stage-0-6.16.0.tgz#f5a263c420532fd57491f1a7315b3036e428f823"
@@ -3915,12 +3909,6 @@ mock-local-storage@^1.0.2:
   dependencies:
     core-js "^0.8.3"
 
-modify-babel-preset@^2.0.3:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/modify-babel-preset/-/modify-babel-preset-2.1.1.tgz#2d3190162ee62fb67aaa3325c242f026322ebbac"
-  dependencies:
-    require-relative "^0.8.7"
-
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
@@ -5009,10 +4997,6 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "~0.1.0"
 
-redux-batch-middleware@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/redux-batch-middleware/-/redux-batch-middleware-0.2.0.tgz#c61f7d6354a6422c8fcea6c8c36fb0fcb215ac84"
-
 redux-localstorage@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/redux-localstorage/-/redux-localstorage-0.4.1.tgz#faf6d719c581397294d811473ffcedee065c933c"
@@ -5144,10 +5128,6 @@ require-directory@^2.1.1:
 require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
-
-require-relative@^0.8.7:
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
 
 require-uncached@^1.0.2:
   version "1.0.2"
