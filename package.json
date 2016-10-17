@@ -5,7 +5,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard node ./scripts/start.js",
     "build": "NODE_ENV=production webpack-dashboard -- node ./scripts/build.js",
-    "test": "NODE_ENV=test mocha --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js"
+    "test": "NODE_ENV=test mocha -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js"
   },
   "devDependencies": {
     "app-module-path": "^1.1.0",
@@ -37,6 +37,7 @@
     "cross-env": "^2.0.1",
     "cross-spawn": "4.0.0",
     "css-loader": "^0.23.1",
+    "css-modules-require-hook": "^4.0.5",
     "emptyfunction": "^1.0.0",
     "enzyme": "^2.4.1",
     "eslint": "3.1.1",
@@ -58,14 +59,9 @@
     "jsdom-global": "^2.1.0",
     "json-loader": "0.5.4",
     "jsx-control-statements": "^3.1.4",
-    "karma": "^0.13.22",
-    "karma-mocha": "^1.0.1",
-    "karma-mocha-reporter": "^2.0.5",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^1.7.0",
     "minimist": "^1.2.0",
     "mocha": "^3.1.2",
+    "mock-local-storage": "^1.0.2",
     "node-sass": "^3.4.2",
     "nodemon": "^1.11.0",
     "opn": "4.0.2",
@@ -81,8 +77,7 @@
     "webpack": "1.13.1",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "1.14.1",
-    "whatwg-fetch": "1.0.0",
-    "css-modules-require-hook": "^4.0.5"
+    "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
