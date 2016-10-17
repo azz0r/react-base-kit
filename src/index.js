@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
-
 import { context } from './components/context-holder/default'
 import ContextHolder from './components/context-holder/context-holder'
 import HmrContainer from './helpers/hrm-container'
