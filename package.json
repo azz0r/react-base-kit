@@ -93,5 +93,8 @@
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "build"
   }
 }
