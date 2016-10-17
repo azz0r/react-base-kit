@@ -14,7 +14,6 @@ export default class Head extends Component {
       <Helmet
         titleTemplate="%s - Welcome"
         defaultTitle="Welcome"
-        base={{"href": this.context.constants.baseUrl}}
       />
     )
   }
