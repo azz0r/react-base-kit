@@ -36,6 +36,6 @@ export default class FourSquare extends React.Component {
           </div>
         </div>
       </div>
-      )
-    }
+    )
   }
+}

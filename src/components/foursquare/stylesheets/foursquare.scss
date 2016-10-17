@@ -1,6 +1,8 @@
 .foursquare {
   font-family: normal 13px/140% "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif;
-  &__results {}
+  &__results {
+    color: #2D5BDE;
+  }
 }
 
 @import 'search';
