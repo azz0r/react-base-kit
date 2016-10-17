@@ -20,10 +20,11 @@ yarn
 * Development ```npm run start```
 * Build  ```npm run build```
 * Test  ```npm run test```
+* Test with Coverage report ```npm run test:coverage```
 
 ### 💪 <a name="testing">Testing</a>
 Powered by Mocha, Chai, Enzyme, Sinon.
 
 * Run unit tests ```npm run test```
 
-Tests are written by creating .spec files: `src/components/4Q/__tests__/`
+Tests are written by creating .spec files under a __tests__ directory.
