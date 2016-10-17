@@ -8,6 +8,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   output: {
+    publicPath: "/",
     path: paths.appBuild,
     filename: "static/js/[name].[hash:8].bundle.js",
     chunkFilename: "static/js/[id].[hash:8].chunk.js",
