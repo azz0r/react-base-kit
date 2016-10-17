@@ -1,16 +1,24 @@
 import 'jsdom-global/register'
-import React from 'react'
-import { mount } from 'enzyme'
-import { expect } from 'chai'
+import {
+  React,
+  Provider,
+  expect,
+  mount,
+  store,
+} from '../../../helpers/test'
 import faker from 'faker'
-import Search from '../search'
+import MainComponent from '../search'
 
 describe('<Search />', () => {
   const props = {
     name: faker.lorem.sentence()
   }
-  const wrapper = mount(<Search {...props} />)
+  const wrapper = mount(
+    <Provider store={store}>
+      <MainComponent {...props} />
+    </Provider>
+  )
   it('contains an <Search /> component', () => {
-    expect(wrapper.find(Search)).to.have.length(1)
+    expect(wrapper.find(MainComponent)).to.have.length(1)
   })
 })

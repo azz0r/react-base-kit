@@ -1,14 +1,20 @@
 import 'jsdom-global/register'
-
-import React from 'react'
-import { mount } from 'enzyme'
-import { expect } from 'chai'
-import faker from 'faker'
-import Foursquare from '../foursquare'
+import {
+  React,
+  Provider,
+  expect,
+  mount,
+  store,
+} from '../../../helpers/test'
+import MainComponent from '../foursquare'
 
 describe('<Foursquare />', () => {
-  const wrapper = mount(<Foursquare />)
+  const wrapper = mount(
+    <Provider store={store}>
+      <MainComponent />
+    </Provider>
+  )
   it('contains an <Foursquare /> component', () => {
-    expect(wrapper.find(Foursquare)).to.have.length(1)
+    expect(wrapper.find(MainComponent)).to.have.length(1)
   })
 })
