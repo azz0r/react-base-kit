@@ -1,16 +1,19 @@
-import React from 'react'
-import { mount } from 'enzyme'
-import { expect } from 'chai'
+import 'jsdom-global/register'
+import {
+  React,
+  expect,
+  mount,
+} from '../../../helpers/test'
 import faker from 'faker'
-import Venue from '../venue'
+import MainComponent from '../venue'
 
 describe('<Venue />', () => {
   const props = {
     name: faker.lorem.sentence()
   }
-  const wrapper = mount(<Venue {...props} />)
+  const wrapper = mount(<MainComponent {...props} />)
   it('contains an <Venue /> component', () => {
-    expect(wrapper.find(Venue)).to.have.length(1)
+    expect(wrapper.find(MainComponent)).to.have.length(1)
   })
   it('allows us to set props', () => {
     const name = faker.lorem.sentence()
