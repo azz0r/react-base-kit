@@ -84,7 +84,7 @@ module.exports = {
       {
         test: /\.(jpg|png)$/,
         loader: 'file?name=[path][name].[hash].[ext]',
-        include: paths.appImgs,
+        include: paths.app.images,
       },
       {
         test: /\.(ot|svg|woff|woff2)(\?.*)?$/,

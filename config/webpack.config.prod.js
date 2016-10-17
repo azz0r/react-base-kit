@@ -31,7 +31,7 @@ prodConfig.module.loaders.push(
     test: /\.scss$/,
     loader: ExtractTextPlugin.extract(
       'style',
-      'css!postcss!sass?sourceMap',
+      'css!postcss!sass?sourceMap'
     ),
   }
 )
