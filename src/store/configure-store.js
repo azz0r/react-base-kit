@@ -4,7 +4,7 @@ import reduxReset from 'redux-reset'
 import { createStore, applyMiddleware, compose } from 'redux'
 
 const storeEnhancer = compose(
-  applyMiddleware(batch),// logger),
+  applyMiddleware(),
   persistState(),
   reduxReset(),
   typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
