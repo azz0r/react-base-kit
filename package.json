@@ -4,7 +4,8 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard node ./scripts/start.js",
     "build": "NODE_ENV=production webpack-dashboard -- node ./scripts/build.js",
-    "test": "NODE_ENV=test mocha -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js"
+    "test": "NODE_ENV=test mocha -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js",
+    "test:coverage": "istanbul cover npm test"
   },
   "devDependencies": {
     "app-module-path": "^1.1.0",
