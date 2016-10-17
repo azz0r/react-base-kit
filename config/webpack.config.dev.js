@@ -7,7 +7,7 @@ const defaultConfig = require('./webpack.common')
 const devConfig = Object.assign({}, defaultConfig, {
   devtool: "source-map",
   devServer: {
-    contentBase: './dist/',
+    contentBase: './build/',
     hot: true,
     historyApiFallback: true
   },
