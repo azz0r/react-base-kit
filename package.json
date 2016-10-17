@@ -5,7 +5,7 @@
     "start": "NODE_ENV=development webpack-dashboard node ./scripts/start.js",
     "build": "NODE_ENV=production webpack-dashboard -- node ./scripts/build.js",
     "test": "NODE_ENV=test mocha -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js",
-    "test:coverage": "istanbul cover npm test"
+    "test:coverage": "istanbul cover _mocha -- --require babel-register -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js"
   },
   "devDependencies": {
     "app-module-path": "^1.1.0",
@@ -78,6 +78,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "istanbul": "1.0.0-alpha.2",
     "lodash.debounce": "^4.0.8",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
