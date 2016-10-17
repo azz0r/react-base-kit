@@ -3,9 +3,10 @@
   "version": "0.0.2",
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard node ./scripts/start.js",
-    "build": "rimraf build && NODE_ENV=production webpack-dashboard -- node ./scripts/build.js",
+    "build": "rimraf build && NODE_ENV=production node ./scripts/build.js",
     "test": "NODE_ENV=test mocha -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js",
-    "test:coverage": "istanbul cover _mocha -- --require babel-register -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js"
+    "test:coverage": "istanbul cover _mocha -- --require babel-register -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js",
+    "deploy": "gh-pages-deploy",
   },
   "devDependencies": {
     "app-module-path": "^1.1.0",
