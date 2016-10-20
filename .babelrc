@@ -6,6 +6,7 @@
   ],
   "plugins": [
     "jsx-control-statements",
+    "react-hot-loader/babel",
     "transform-react-constant-elements",
     "transform-react-inline-elements",
     "transform-react-remove-prop-types"

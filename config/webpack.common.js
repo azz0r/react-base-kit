@@ -56,25 +56,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-        include: [
-          paths.appSrc,
-        ],
-        query: {
-          cacheDirectory: true,
-          babelrc: false,
-          presets: [
-            'react',
-            'es2015',
-            'stage-0',
-          ],
-          plugins: [
-            'transform-runtime',
-            'jsx-control-statements',
-            'transform-react-constant-elements',
-            'transform-react-inline-elements',
-            'transform-react-remove-prop-types',
-          ],
-        },
+        exclude: /node_modules/,
+        include: paths.appSrc,
       },
       {
         test: /\.json$/,
