@@ -73,6 +73,7 @@ module.exports = {
             'transform-react-constant-elements',
             'transform-react-inline-elements',
             'transform-react-remove-prop-types',
+            'transform-async-to-generator',
           ],
         },
       },

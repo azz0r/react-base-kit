@@ -4,6 +4,7 @@
   "scripts": {
     "start": "NODE_ENV=development node ./scripts/start.js",
     "build": "NODE_ENV=production rimraf build &&  node ./scripts/build.js",
+    "export": "NODE_ENV=production rimraf build &&  babel-node ./scripts/export/html.js",
     "test": "NODE_ENV=test mocha -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js",
     "test:coverage": "istanbul cover _mocha -- --require babel-register -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js",
     "deploy": "gh-pages-deploy"
@@ -11,10 +12,9 @@
   "devDependencies": {
     "app-module-path": "^1.1.0",
     "autoprefixer": "6.3.7",
-    "babel-core": "6.11.4",
+    "babel-core": "6.17.0",
     "babel-eslint": "6.1.2",
     "babel-loader": "6.2.4",
-    "babel-plugin-async-to-promises": "^1.0.5",
     "babel-plugin-syntax-trailing-function-commas": "6.8.0",
     "babel-plugin-transform-class-properties": "6.11.5",
     "babel-plugin-transform-object-rest-spread": "6.8.0",
@@ -79,6 +79,9 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "babel-plugin-transform-regenerator": "^6.16.1",
+    "babel-types": "^6.16.0",
+    "ignore-styles": "^5.0.1",
     "istanbul": "1.0.0-alpha.2",
     "lodash.debounce": "^4.0.8",
     "react": "^15.2.1",

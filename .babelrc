@@ -5,9 +5,14 @@
     "stage-0"
   ],
   "plugins": [
+    "transform-runtime",
+    "transform-regenerator",
     "jsx-control-statements",
+    "syntax-trailing-function-commas",
+    "transform-class-properties",
     "transform-react-constant-elements",
     "transform-react-inline-elements",
-    "transform-react-remove-prop-types"
+    "transform-react-remove-prop-types",
+    "transform-async-to-generator"
   ]
 }
