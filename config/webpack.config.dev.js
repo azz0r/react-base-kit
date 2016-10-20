@@ -11,13 +11,12 @@ const devConfig = Object.assign({}, defaultConfig, {
     hot: true,
     historyApiFallback: true
   },
-  entry: {
-    vendors: ['react', 'react-dom', 'lodash.debounce', 'react-helmet', 'react-router', 'superagent'],
-    devServer: require.resolve('webpack-dev-server/client') + '?/',
-    hot: require.resolve('webpack/hot/dev-server'),
-    polyfills: require.resolve('./polyfills'),
-    app: path.join(paths.appSrc, 'index'),
-  },
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    require.resolve('./polyfills'),
+    path.join(paths.appSrc, 'index'),
+  ],
   watch: true,
   stats: true,
   progress: true,
