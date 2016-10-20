@@ -137,7 +137,7 @@ function runDevServer(port) {
     }
 
     console.log('-----------------------')
-    console.log(chalk.yellow('Starting the development server...'))
+    console.log(chalk.italic('Starting the development server...'))
     openBrowser(port)
   })
 }
