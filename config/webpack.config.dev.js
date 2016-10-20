@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
 var paths = require('./paths')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 require('./environment')
 const defaultConfig = require('./webpack.common')
 
@@ -23,6 +24,12 @@ const devConfig = Object.assign({}, defaultConfig, {
 })
 devConfig.plugins.push(
   new webpack.HotModuleReplacementPlugin()
+)
+devConfig.plugins.push(
+  new HtmlWebpackPlugin({
+    inject: true,
+    template: paths.appHtml,
+  })
 )
 devConfig.module.loaders.push(
   {

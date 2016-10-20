@@ -3,7 +3,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer')
 var path = require('path')
 var paths = require('./paths')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 module.exports = {
@@ -21,10 +20,6 @@ module.exports = {
       'process.env.PORT': JSON.stringify(process.env.PORT),
       'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: paths.appHtml,
     }),
   ],
   resolve: {
