@@ -81,6 +81,7 @@
   "dependencies": {
     "babel-plugin-transform-regenerator": "^6.16.1",
     "babel-types": "^6.16.0",
+    "child_process": "^1.0.2",
     "ignore-styles": "^5.0.1",
     "istanbul": "1.0.0-alpha.2",
     "lodash.debounce": "^4.0.8",
