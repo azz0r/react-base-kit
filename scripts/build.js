@@ -70,4 +70,5 @@ webpack(config).run(function(err, stats) {
     console.log('  git push -f origin gh-pages');
     console.log('  git checkout -');
   }
+  process.exit()
 });

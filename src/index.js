@@ -4,7 +4,6 @@ import { Router, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { context } from './components/context-holder/default'
 import ContextHolder from './components/context-holder/context-holder'
-import HmrContainer from './helpers/hrm-container'
 import routes from './routes'
 import configureStore from './store/configure-store'
 
@@ -24,17 +23,6 @@ export const Container = (
 
 try {
   ReactDOM.render(Container, rootEl)
-  if (module.hot) {
-    module.hot.accept('./components/page/page', () => {
-      const NextApp = require('./components/page/page').default
-      ReactDOM.render(
-        <HmrContainer>
-          <NextApp />
-        </HmrContainer>,
-        rootEl
-      )
-    })
-  }
 } catch (err) {
   console.log('Render error', err)
 }
