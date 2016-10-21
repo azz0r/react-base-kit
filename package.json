@@ -89,7 +89,8 @@
     "redux": "^3.6.0",
     "redux-localstorage": "^0.4.1",
     "redux-reset": "^0.2.0",
-    "superagent": "^2.3.0"
+    "superagent": "^2.3.0",
+    "webpack-hot-middleware": "^2.13.0"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
