@@ -19,7 +19,6 @@ const devConfig = Object.assign({}, defaultConfig, {
     path.join(paths.appSrc, 'index'),
   ],
   watch: true,
-  stats: true,
   progress: true,
 })
 devConfig.plugins.push(

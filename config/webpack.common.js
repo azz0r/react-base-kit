@@ -4,7 +4,6 @@ var autoprefixer = require('autoprefixer')
 var path = require('path')
 var paths = require('./paths')
 var ProgressBarPlugin = require('progress-bar-webpack-plugin')
-var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   output: {
@@ -15,7 +14,6 @@ module.exports = {
   },
   plugins: [
     new ProgressBarPlugin(),
-    new WebpackNotifierPlugin(),
     new ExtractTextPlugin('static/css/[name].[hash:8].css'),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
