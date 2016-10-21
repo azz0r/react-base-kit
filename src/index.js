@@ -23,15 +23,6 @@ export const Container = (
 
 try {
   ReactDOM.render(Container, rootEl)
-  if (module.hot) {
-    module.hot.accept('./components/page/page', () => {
-      const NextApp = require('./components/page/page').default
-      ReactDOM.render(
-        <NextApp />,
-        rootEl
-      )
-    })
-  }
 } catch (err) {
   console.log('Render error', err)
 }
