@@ -1,7 +1,9 @@
 {
   "name": "sainsburysscrapertest",
+  "env": "env",
   "scripts": {
-    "start": "NODE_ENV=development node ./start.js"
+    "start": "NODE_ENV=development node ./start.js",
+    "watch": "watch 'npm run start'"
   },
   "version": "1.0.0",
   "main": "start.js",
@@ -12,6 +14,7 @@
   "author": "azz0r",
   "license": "MIT",
   "dependencies": {
-    "osmosis": "^1.1.1"
+    "osmosis": "^1.1.1",
+    "watch": "^1.0.1"
   }
 }
