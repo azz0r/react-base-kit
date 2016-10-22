@@ -1,23 +1,38 @@
-const osmosis = require('osmosis');
+import request from "request"
+import cheerio from "cheerio"
+import chalk from 'chalk'
+
 const url = "http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html"
+const log = console.log;
 
-osmosis
-.get(url)
-.find('h1 + div a')
-.set('location')
+request(url, (error, response, body) => {
+  const $ = cheerio.load(body)
 
-.set({
-    'title':        'section > h2',
-    'description':  '#postingbody',
-    'subcategory':  'div.breadbox > span[4]',
-    'date':         'time@datetime',
-    'latitude':     '#map@data-latitude',
-    'longitude':    '#map@data-longitude',
-    'images':       ['img@src']
+  if (!error) {
+    log(chalk.blue.bgWhite('No error receieved, processing body'))
+    let
+      titles = $(".productInfo a").text(),
+      urls = $('.productInfo a').map(function(i, el) { return $(el).attr('href').trim() }).toArray(),
+      unitPrices = $('.pricePerUnit').map(function(i, el) { return $(el).text().trim() }).toArray(),
+      collection = []
+
+      titles = titles.split('\n').filter((value) => {return value !== ""})
+
+      titles.forEach((title, key) => {
+        title = title.trim()
+        let url =  urls[key]
+        if (title > '' && url > '') {
+          log(chalk.green.inverse(`Adding ${title} to the collection`))
+          collection[key] = {
+            title: title,
+            url: url,
+            unit_price: unitPrices[key] ? unitPrices[key] : 0
+          }
+        }
+      })
+      log(chalk.yellow.inverse(`Collection complete, listed below:`))
+    console.log(collection)
+  } else {
+    console.log("We’ve encountered an error: " + error)
+  }
 })
-.data(function(listing) {
-    // do something with listing data
-})
-.log(console.log)
-.error(console.log)
-.debug(console.log)
