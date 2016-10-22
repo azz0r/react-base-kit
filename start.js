@@ -11,19 +11,23 @@ request(url, (error, response, body) => {
   const $ = cheerio.load(body)
 
   if (!error) {
-    log(chalk.bgGreen.black('No error receieved, processing body'))
+    log(chalk.bgWhite.black("No error receieved, processing body"))
     let
       titles = $(".productInfo a").text(),
-      urls = $('.productInfo a').map(function(i, el) { return $(el).attr('href').trim() }).toArray(),
-      unitPrices = $('.pricePerUnit').map(function(i, el) { return $(el).text().trim() }).toArray(),
+      urls = $(".productInfo a").map((i, el) => {
+        return $(el).attr("href").trim()
+      }).toArray(),
+      unitPrices = $(".pricePerUnit").map((i, el) => {
+        return $(el).text().trim()
+      }).toArray(),
       collection = []
 
-      titles = titles.split('\n').filter((value) => {return value !== ""})
+      titles = titles.split("\n").filter((value) => {return value !== ""})
 
       titles.forEach((title, key) => {
         title = title.trim()
         let url =  urls[key]
-        if (title > '' && url > '') {
+        if (title > "" && url > "") {
           log(chalk.bgGreen.black(`Adding ${title} to the collection`))
           collection[key] = {
             title: title,
@@ -32,9 +36,10 @@ request(url, (error, response, body) => {
           }
         }
       })
-      writeFile(dataPath, collection.filter((product) => product.title))
-      log(chalk.bgYellow.black(`Collection complete, listed below:`))
-      log(chalk.bgWhite.black(collection))
+      collection = collection.filter((product) => product.title)
+      writeFile(dataPath, collection)
+      log(chalk.bgYellow.black(`Collection:`),
+        chalk.bgWhite.black(collection))
   } else {
     log(chalk.red.inverse(`Failed to write data file ${err}`))
   }
