@@ -3,6 +3,8 @@ import cheerio from "cheerio"
 import chalk from "chalk"
 import writeFile from "./scripts/write-file"
 import totalUnitPrices from "./scripts/total-unit-prices"
+import getPriceFromString from "./scripts/get-price-from-string"
+import collection from './scripts/tests/stub.json'
 
 const url = "http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html"
 const log = console.log
@@ -36,10 +38,11 @@ request(url, (error, response, body) => {
             collection[key] = {
               title: title,
               url: url,
-              unit_price: unitPrices[key] ? unitPrices[key] : 0
+              unit_price: getPriceFromString(unitPrices[key] ? unitPrices[key] : 0)
             }
           }
         })
+      console.log(collection)
       // filter out any empty results
       writeFile(
         dataPath,

@@ -1,4 +1,4 @@
-import totalUnitPrices from './total-unit-prices'
+import totalUnitPrices from '../total-unit-prices'
 import stub from './stub.json'
 import { expect } from 'chai'
 
