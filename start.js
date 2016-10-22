@@ -1,10 +1,11 @@
 import request from "request"
 import cheerio from "cheerio"
-import chalk from 'chalk'
-import writeFile from './write-file'
+import chalk from "chalk"
+import writeFile from "./scripts/write-file"
 
 const url = "http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html"
-const log = console.log;
+const log = console.log
+const dataPath = "data/data.json"
 
 request(url, (error, response, body) => {
   const $ = cheerio.load(body)
@@ -31,8 +32,7 @@ request(url, (error, response, body) => {
           }
         }
       })
-      log(writeFile)
-      writeFile("data.json", collection.filter((product) => product.title))
+      writeFile(dataPath, collection.filter((product) => product.title))
       log(chalk.bgYellow.black(`Collection complete, listed below:`))
       log(chalk.bgWhite.black(collection))
   } else {
