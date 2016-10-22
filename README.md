@@ -1,15 +1,4 @@
-#React Base Kit
-
-## ✨ Features
-* Hot reloading (v3)
-* Static compile
-* Bundle per route
-* SASS compiling with hot reload
-* Per component SASS
-* Webpack dev & production configs inherit from a common config
-* Mocha, Chai & Enzyme testing
-* Redux
-* Stage 0, ES6
+# Sainsbury test
 
 ## 📕 Index
 * [Installing](#installing)
@@ -29,13 +18,11 @@ yarn
 
 ### 🚀 <a name="launching">Launching</a>
 * Development ```npm run start```
-* Build  ```npm run build```
 * Test  ```npm run test```
 * Test with Coverage report ```npm run test:coverage```
 
 ###  📚 <a name="testing">Testing</a>
 Powered by Mocha, Chai, Enzyme, Sinon.
-
 * Run unit tests ```npm run test```
 
 Tests are written by creating .spec files under a __tests__ directory.
