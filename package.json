@@ -3,7 +3,8 @@
   "env": "env",
   "scripts": {
     "start": "NODE_ENV=development babel-node ./start.js",
-    "watch": "watch 'npm run start'"
+    "watch": "watch 'npm run start'",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register scripts/**/**.unit.js"
   },
   "version": "1.0.0",
   "main": "start.js",
@@ -15,11 +16,17 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.16.0",
-    "cheerio": "^0.22.0",
-    "request": "^2.75.0",
-    "watch": "^1.0.1",
     "babel-preset-es2015": "^6.16.0",
     "chalk": "^1.1.3",
-    "jsonfile": "^2.4.0"
+    "cheerio": "^0.22.0",
+    "jsonfile": "^2.4.0",
+    "request": "^2.75.0",
+    "watch": "^1.0.1"
+  },
+  "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "chai": "^3.5.0",
+    "faker": "^3.1.0",
+    "mocha": "^3.1.2"
   }
 }
