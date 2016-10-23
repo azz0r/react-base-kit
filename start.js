@@ -2,6 +2,7 @@ import request from "request"
 import cheerio from "cheerio"
 import chalk from "chalk"
 import writeFile from "./scripts/write-file"
+import getPageSizes from "./scripts/get-page-sizes"
 import totalUnitPrices from "./scripts/total-unit-prices"
 import getPriceFromString from "./scripts/get-price-from-string"
 import collection from './scripts/tests/stub.json'
@@ -42,15 +43,16 @@ request(url, (error, response, body) => {
             }
           }
         })
-      console.log(collection)
-      // filter out any empty results
-      writeFile(
-        dataPath,
-        {
-          results: collection,
-          total: totalUnitPrices(collection)
-        }
-      )
+      getPageSizes(collection)
+        .then(() => {
+          writeFile(
+            dataPath,
+            {
+              results: collection,
+              total: totalUnitPrices(collection)
+            }
+          )
+        })
       log(chalk.bgYellow.black(`Collection:`),
         chalk.bgWhite.black(collection))
   } else {

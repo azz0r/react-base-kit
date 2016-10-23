@@ -1,5 +1,6 @@
 import chalk from 'chalk'
 import jsonfile from 'jsonfile'
+jsonfile.spaces = 2;
 
 const log = console.log
 
