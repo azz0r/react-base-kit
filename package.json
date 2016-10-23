@@ -40,5 +40,6 @@
     "scrape",
     "mocha",
     "chai"
-  ]
+  ],
+  "engine": "node 6.8.1"
 }
