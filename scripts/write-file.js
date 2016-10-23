@@ -9,7 +9,7 @@ function writeFile(filename, data) {
     if (err) {
       return log(chalk.red.inverse(`Failed to write data file: ${err}`))
     }
-    log(chalk.bgGreen.black(`Data file written successfully`))
+    log(chalk.bgGreen.black('Data file written successfully'))
   })
 }
 
