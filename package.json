@@ -4,7 +4,7 @@
   "scripts": {
     "start": "NODE_ENV=development babel-node ./start.js",
     "watch": "watch 'npm run start'",
-    "test": "NODE_ENV=test mocha --compilers js:babel-core/register scripts/**/**.unit.js",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register scripts/tests/**.unit.js",
     "test:watch": "watch 'npm run test'"
   },
   "version": "1.0.0",
@@ -17,20 +17,19 @@
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.16.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-    "chalk": "^1.1.3",
-    "cheerio": "^0.22.0",
-    "jsonfile": "^2.4.0",
-    "request": "^2.75.0",
-    "watch": "^1.0.1",
-    "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "bluebird": "^3.4.6",
     "chai": "^3.5.0",
-    "faker": "^3.1.0",
+    "chalk": "^1.1.3",
+    "cheerio": "^0.22.0",
     "fs": "^0.0.1-security",
+    "jsonfile": "^2.4.0",
     "mocha": "^3.1.2",
-    "request-promise": "^4.1.1"
+    "request": "^2.75.0",
+    "request-promise": "^4.1.1",
+    "watch": "^1.0.1"
   },
   "bugs": {
     "url": "https://github.com/azz0r/sainsburys-node-scraper/issues"
