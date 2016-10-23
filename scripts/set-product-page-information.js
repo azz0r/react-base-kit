@@ -6,7 +6,7 @@ import cheerio from "cheerio"
 
 const log = console.log
 
-function getPageSizes(collection) {
+function setProductPageInformation(collection) {
   let requests = [],
     results = []
 
@@ -39,4 +39,4 @@ function getPageSizes(collection) {
     })
 }
 
-export default getPageSizes
+export default setProductPageInformation

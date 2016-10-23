@@ -2,7 +2,7 @@ import request from "request"
 import cheerio from "cheerio"
 import chalk from "chalk"
 import writeFile from "./scripts/write-file"
-import getPageSizes from "./scripts/get-page-sizes"
+import setProductPageInformation from "./scripts/set-product-page-information"
 import totalUnitPrices from "./scripts/total-unit-prices"
 import getPriceFromString from "./scripts/get-price-from-string"
 import collection from './scripts/tests/stub.json'
@@ -43,7 +43,7 @@ request(url, (error, response, body) => {
             }
           }
         })
-      getPageSizes(collection)
+      setProductPageInformation(collection)
         .then(() => {
           writeFile(
             dataPath,
