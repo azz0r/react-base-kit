@@ -1,5 +1,5 @@
 {
-  "name": "sainsburysscrapertest",
+  "name": "sainsburys-node-scraper",
   "env": "env",
   "scripts": {
     "start": "NODE_ENV=development babel-node ./start.js",
@@ -10,12 +10,12 @@
   "version": "1.0.0",
   "main": "start.js",
   "repository": {
-    "url": "https://github.com/azz0r/react-base-kit",
+    "url": "git+https://github.com/azz0r/react-base-kit.git",
     "type": "git"
   },
   "author": "azz0r",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
@@ -23,14 +23,23 @@
     "cheerio": "^0.22.0",
     "jsonfile": "^2.4.0",
     "request": "^2.75.0",
-    "watch": "^1.0.1"
-  },
-  "dependencies": {
+    "watch": "^1.0.1",
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "bluebird": "^3.4.6",
     "chai": "^3.5.0",
     "faker": "^3.1.0",
+    "fs": "^0.0.1-security",
     "mocha": "^3.1.2",
     "request-promise": "^4.1.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/azz0r/sainsburys-node-scraper/issues"
+  },
+  "homepage": "https://github.com/azz0r/sainsburys-node-scraper#readme",
+  "keywords": [
+    "node",
+    "scrape",
+    "mocha",
+    "chai"
+  ]
 }
