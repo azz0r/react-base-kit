@@ -1,4 +1,5 @@
-# Sainsbury test
+Sainsburys test
+====
 
 ## 📕 Index
 * [Installing](#installing)
@@ -6,23 +7,19 @@
 * [Testing](#testing)
 
 ### 💪 <a name="installing"> Installing</a>
-```
-npm cache clean;
-npm install
-npm run start;
+```node
+npm cache clean && npm install && npm run start
 ```
 or
-```
+```node
 yarn
 ```
 
 ### 🚀 <a name="launching">Launching</a>
-* Development ```npm run start```
-* Test  ```npm run test```
-* Test with Coverage report ```npm run test:coverage```
+* Run script `npm run start`
 
 ###  📚 <a name="testing">Testing</a>
-Powered by Mocha, Chai, Enzyme, Sinon.
-* Run unit tests ```npm run test```
+Powered by Mocha, Chai
+* Test  `npm run test`
 
-Tests are written by creating .spec files under a __tests__ directory.
+Tests are located in scripts/tests/
