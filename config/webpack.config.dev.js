@@ -1,12 +1,9 @@
+var webpack = require('webpack')
+var path = require('path')
+var paths = require('./paths')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 require('./environment')
-const webpack = require('webpack')
-const path = require('path')
-const paths = require('./paths')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const defaultConfig = require('./webpack.common')
-const WebpackOnBuildPlugin = require('on-build-webpack');
-const opn = require('opn')
-const DEFAULT_PORT = process.env.PORT || 3000
 
 const devConfig = Object.assign({}, defaultConfig, {
   devtool: "source-map",
@@ -16,8 +13,8 @@ const devConfig = Object.assign({}, defaultConfig, {
     historyApiFallback: true
   },
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
     'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
     require.resolve('./polyfills'),
     path.join(paths.appSrc, 'index'),
@@ -32,11 +29,6 @@ devConfig.plugins.push(
   new HtmlWebpackPlugin({
     inject: true,
     template: paths.appHtml,
-  })
-)
-devConfig.plugins.push(
-  new WebpackOnBuildPlugin(function() {
-    opn('http://localhost:' + DEFAULT_PORT + '/')
   })
 )
 devConfig.module.loaders.push(
