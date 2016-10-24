@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const defaultConfig = require('./webpack.common')
 const path = require('path')
 const paths = require('./paths')
+const ManifestPlugin = require('webpack-manifest-plugin')
 const HTMLMinifier = {
   removeComments: true,
   removeCommentsFromCDATA: true,
@@ -34,16 +35,26 @@ const prodConfig = Object.assign({}, defaultConfig, {
   }
 })
 
-prodConfig.plugins.push(
+const pluginPush = (data) => {
+  prodConfig.plugins.push(
+    data
+  )
+}
+pluginPush(
   new webpack.optimize.UglifyJsPlugin({
     sourceMap: false,
     mangle: true,
   })
 )
-prodConfig.plugins.push(
+pluginPush(
+  new ManifestPlugin({
+    fileName: 'asset-manifest.json'
+  })
+)
+pluginPush(
   new ExtractTextPlugin('static/css/[name].[hash:8].css')
 )
-prodConfig.plugins.push(
+pluginPush(
   new HtmlWebpackPlugin({
     template: paths.appHtml,
     minify: HTMLMinifier,
