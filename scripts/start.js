@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'development'
-
 var path = require('path')
 var chalk = require('chalk')
 var webpack = require('webpack')
@@ -9,8 +7,9 @@ var opn = require('opn')
 var detect = require('./utils/detectPort')
 var prompt = require('./utils/prompt')
 var config = require('../config/webpack.config.dev')
+var log = require('debug')('app:start')
+log('Create generic configuration.')
 
-// Tools like Cloud9 rely on this
 var DEFAULT_PORT = process.env.PORT || 3000
 var compiler
 
@@ -60,16 +59,17 @@ function setupCompiler(port) {
   compiler = webpack(config, handleCompile)
 
   compiler.plugin('invalid', function() {
-    console.log('Compiling...')
+    log('Compiling...')
   })
 
   compiler.plugin('done', function(stats) {
     var hasErrors = stats.hasErrors()
     var hasWarnings = stats.hasWarnings()
     if (!hasErrors && !hasWarnings) {
-      console.log('-----------------------')
-      console.log(chalk.green('Compiled successfully, running at: http://localhost:' + port + '/'))
-      console.log('-----------------------')
+      log(
+        chalk.green('Compiled successfully'),
+        chalk.italic('http://localhost:' + port + '/')
+      )
       return
     }
 
@@ -82,8 +82,7 @@ function setupCompiler(port) {
     )
 
     if (hasErrors) {
-      console.log(chalk.red('Failed to compile.'))
-      console.log()
+      log(chalk.red('Failed to compile.'))
       if (formattedErrors.some(isLikelyASyntaxError)) {
         // If there are any syntax errors, show just them.
         // This prevents a confusing ESLint parsing error
@@ -91,24 +90,21 @@ function setupCompiler(port) {
         formattedErrors = formattedErrors.filter(isLikelyASyntaxError)
       }
       formattedErrors.forEach(message => {
-        console.log(message)
-        console.log()
+        log(message)
       })
       // If errors exist, ignore warnings.
       return
     }
 
     if (hasWarnings) {
-      console.log(chalk.yellow('Compiled with warnings.'))
-      console.log()
+      log(chalk.yellow('Compiled with warnings.'))
       formattedWarnings.forEach(message => {
-        console.log(message)
-        console.log()
+        log(message)
       })
 
-      console.log('You may use special comments to disable some warnings.')
-      console.log('Use ' + chalk.yellow('// eslint-disable-next-line') + ' to ignore the next line.')
-      console.log('Use ' + chalk.yellow('/* eslint-disable */') + ' to ignore all warnings in a file.')
+      log('You may use special comments to disable some warnings.')
+      log('Use ' + chalk.yellow('// eslint-disable-next-line') + ' to ignore the next line.')
+      log('Use ' + chalk.yellow('/* eslint-disable */') + ' to ignore all warnings in a file.')
     }
   })
 }
@@ -126,6 +122,7 @@ function runDevServer(port) {
     devServer: {
       hot: true
     },
+    progress: true,
     colors: true,
     clientLogLevel: "error",
     watchOptions: {
@@ -133,11 +130,9 @@ function runDevServer(port) {
     }
   }).listen(port, (err, result) => {
     if (err) {
-      return console.log(err)
+      return log(err)
     }
-
-    console.log('-----------------------')
-    console.log(chalk.italic('Starting the development server...'))
+    log(chalk.italic('Development server started'))
     openBrowser(port)
   })
 }

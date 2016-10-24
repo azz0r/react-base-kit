@@ -4,6 +4,8 @@ var paths = require('./paths')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 require('./environment')
 const defaultConfig = require('./webpack.common')
+const log = require('debug')('app:webpack')
+log('Webpack dev config started')
 
 const devConfig = Object.assign({}, defaultConfig, {
   devtool: "source-map",
@@ -37,4 +39,5 @@ devConfig.module.loaders.push(
     loader: 'style!css!postcss!sass?sourceMap',
   }
 )
+log('Webpack dev config finished')
 module.exports = devConfig
