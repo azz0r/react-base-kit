@@ -1,14 +1,16 @@
-var path = require('path')
-var chalk = require('chalk')
-var webpack = require('webpack')
-var WebpackDevServer = require('webpack-dev-server')
-var execSync = require('child_process').execSync
-var opn = require('opn')
-var detect = require('./utils/detectPort')
-var prompt = require('./utils/prompt')
-var config = require('../config/webpack.config.dev')
-var log = require('debug')('app:start')
-log('Create generic configuration.')
+const path = require('path')
+const chalk = require('chalk')
+const webpack = require('webpack')
+const WebpackDevServer = require('webpack-dev-server')
+const execSync = require('child_process').execSync
+const opn = require('opn')
+const detect = require('./utils/detectPort')
+const prompt = require('./utils/prompt')
+const config = require('../config/webpack.config.dev')
+const debug = require('debug')
+const log = debug('app:start')
+const error = debug('app:error')
+log('Start development server')
 
 var DEFAULT_PORT = process.env.PORT || 3000
 var compiler
@@ -66,10 +68,10 @@ function setupCompiler(port) {
     var hasErrors = stats.hasErrors()
     var hasWarnings = stats.hasWarnings()
     if (!hasErrors && !hasWarnings) {
-      log(
-        chalk.green('Compiled successfully'),
-        chalk.italic('http://localhost:' + port + '/')
-      )
+      log(chalk.green('Compiled successfully'))
+      const url = 'http://localhost:' + port + '/'
+      log(url)
+      opn(url)
       return
     }
 
@@ -82,24 +84,20 @@ function setupCompiler(port) {
     )
 
     if (hasErrors) {
-      log(chalk.red('Failed to compile.'))
+      error('Failed to compile')
       if (formattedErrors.some(isLikelyASyntaxError)) {
-        // If there are any syntax errors, show just them.
-        // This prevents a confusing ESLint parsing error
-        // preceding a much more useful Babel syntax error.
         formattedErrors = formattedErrors.filter(isLikelyASyntaxError)
       }
       formattedErrors.forEach(message => {
-        log(message)
+        error(message)
       })
-      // If errors exist, ignore warnings.
       return
     }
 
     if (hasWarnings) {
       log(chalk.yellow('Compiled with warnings.'))
       formattedWarnings.forEach(message => {
-        log(message)
+        error(message)
       })
 
       log('You may use special comments to disable some warnings.')
@@ -107,10 +105,6 @@ function setupCompiler(port) {
       log('Use ' + chalk.yellow('/* eslint-disable */') + ' to ignore all warnings in a file.')
     }
   })
-}
-
-function openBrowser(port) {
-  opn('http://localhost:' + port + '/')
 }
 
 function runDevServer(port) {
@@ -130,10 +124,9 @@ function runDevServer(port) {
     }
   }).listen(port, (err, result) => {
     if (err) {
-      return log(err)
+      return error(err)
     }
-    log(chalk.italic('Development server started'))
-    openBrowser(port)
+    log('Development server started')
   })
 }
 
