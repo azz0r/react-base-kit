@@ -5,6 +5,7 @@ const defaultConfig = require('./webpack.common')
 const path = require('path')
 const paths = require('./paths')
 const ManifestPlugin = require('webpack-manifest-plugin')
+
 const HTMLMinifier = {
   removeComments: true,
   removeCommentsFromCDATA: true,
@@ -22,6 +23,7 @@ const HTMLMinifier = {
 
 const prodConfig = Object.assign({}, defaultConfig, {
   devtool: false,
+  warnings: false,
   entry: {
     vendors: ['react', 'react-dom', 'lodash.debounce', 'react-helmet', 'react-router', 'superagent'],
     polyfill: require.resolve('./polyfills'),
@@ -44,6 +46,10 @@ pluginPush(
   new webpack.optimize.UglifyJsPlugin({
     sourceMap: false,
     mangle: true,
+    compress: {
+      warnings: false,
+      drop_console: true,
+    },
   })
 )
 pluginPush(
@@ -66,5 +72,4 @@ prodConfig.module.loaders.push(
     loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?sourceMap'),
   }
 )
-
 module.exports = prodConfig
