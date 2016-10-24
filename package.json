@@ -2,7 +2,7 @@
   "name": "react-base-kit",
   "version": "0.0.2",
   "scripts": {
-    "start": "NODE_ENV=development node ./scripts/start.js",
+    "start": "NODE_ENV=development webpack-dev-server --config config/webpack.config.dev.js --quiet --progress --colors --open --port 3000 --inline",
     "build": "NODE_ENV=production rimraf build && webpack --config config/webpack.config.prod.js",
     "test": "NODE_ENV=test mocha -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js",
     "test:coverage": "istanbul cover _mocha -- --require babel-register -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/*.spec.js",
@@ -63,6 +63,7 @@
     "mock-local-storage": "^1.0.2",
     "node-sass": "^3.4.2",
     "nodemon": "^1.11.0",
+    "on-build-webpack": "^0.1.0",
     "opn": "4.0.2",
     "postcss-loader": "0.9.1",
     "promise": "7.1.1",
@@ -74,7 +75,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1",
+    "webpack-dev-server": "^1.14.1",
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
