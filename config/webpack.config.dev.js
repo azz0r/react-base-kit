@@ -4,8 +4,7 @@ var paths = require('./paths')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 require('./environment')
 const defaultConfig = require('./webpack.common')
-const log = require('debug')('app:webpack')
-log('Webpack dev config started')
+import { log } from './log'
 
 const devConfig = Object.assign({}, defaultConfig, {
   devtool: "source-map",

@@ -7,9 +7,8 @@ const opn = require('opn')
 const detect = require('./utils/detectPort')
 const prompt = require('./utils/prompt')
 const config = require('../config/webpack.config.dev')
-const debug = require('debug')
-const log = debug('app:start')
-const error = debug('app:error')
+import { log, error } from '../config/log'
+
 log('Start development server')
 
 var DEFAULT_PORT = process.env.PORT || 3000

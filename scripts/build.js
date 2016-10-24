@@ -1,18 +1,15 @@
 process.env.NODE_ENV = 'production'
 
-const chalk = require('chalk')
-const fs = require('fs')
-const path = require('path')
-const filesize = require('filesize')
-const gzipSize = require('gzip-size').sync
-const rimrafSync = require('rimraf').sync
-const webpack = require('webpack')
-const config = require('../config/webpack.config.prod')
-const paths = require('../config/paths')
-const debug = require('debug')
-const log = debug('app:build')
-const error = debug('app:error')
-const exit = debug('app:shutdown')
+import chalk from 'chalk'
+import fs from 'fs'
+import path from 'path'
+import filesize from 'filesize'
+import { sync as gzipSize } from 'gzip-size'
+import { sync as rimrafSync } from 'rimraf'
+import webpack from 'webpack'
+import config from '../config/webpack.config.prod'
+import paths from '../config/paths'
+import { log, error, exit } from '../config/log'
 
 log('Emptying build directory')
 rimrafSync(paths.appBuild + '/*')
