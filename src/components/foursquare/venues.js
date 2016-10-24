@@ -6,7 +6,7 @@ export default class Venues extends React.Component {
   displayName = 'Venues'
 
   static propTypes = {
-    venues: React.PropTypes.array.isRequired,
+    venues: React.propTypes.array.isRequired,
   }
 
   render() {

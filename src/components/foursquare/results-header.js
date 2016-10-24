@@ -5,8 +5,8 @@ export default class ResultsHeader extends React.Component {
   displayName = 'ResultsHeader'
 
   static propTypes = {
-    query: React.PropTypes.string.isRequired,
-    total:  React.PropTypes.number.isRequired,
+    query: React.propTypes.string.isRequired,
+    total:  React.propTypes.number.isRequired,
   }
 
   render() {
