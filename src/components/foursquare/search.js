@@ -14,7 +14,7 @@ class Search extends React.Component {
   static propTypes = {
     dispatch: React.PropTypes.func.isRequired,
     searches: React.PropTypes.array,
-    onSearchUpdated: React.PropTypes.func.isRequired,
+    onSearchUpdated: React.PropTypes.func,
   }
 
   state = {

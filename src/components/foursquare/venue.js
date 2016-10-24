@@ -6,9 +6,13 @@ export default class Venue extends React.Component {
 
   static propTypes = {
     name: React.PropTypes.string.isRequired,
-    checkinsCount:  React.PropTypes.number.isRequired,
+    checkinsCount:  React.PropTypes.number,
     rating:  React.PropTypes.number,
     img:  React.PropTypes.string,
+  }
+
+  static defaultProps = {
+    checkinsCount: 0,
   }
 
   render() {
