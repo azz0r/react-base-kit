@@ -25,20 +25,18 @@ const devConfig = Object.assign({}, defaultConfig, {
   watch: true,
   progress: true,
 })
-devConfig.plugins.push(
-  new webpack.HotModuleReplacementPlugin()
-)
-devConfig.plugins.push(
+const plugins = [
+  new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({
     inject: true,
     template: paths.appHtml,
-  })
-)
-devConfig.plugins.push(
+  }),
   new WebpackOnBuildPlugin(function() {
+    debug('opening browser')
     opn('http://localhost:' + DEFAULT_PORT + '/')
-  })
-)
+  }),
+]
+devConfig.plugins.concat(plugins)
 devConfig.module.loaders.push(
   {
     test: /\.scss$/,

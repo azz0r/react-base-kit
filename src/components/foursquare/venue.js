@@ -5,10 +5,10 @@ export default class Venue extends React.Component {
   displayName = 'Venue'
 
   static propTypes = {
-    name: React.propTypes.string.isRequired,
-    checkinsCount:  React.propTypes.number.isRequired,
-    rating:  React.propTypes.number,
-    img:  React.propTypes.string,
+    name: React.PropTypes.string.isRequired,
+    checkinsCount:  React.PropTypes.number.isRequired,
+    rating:  React.PropTypes.number,
+    img:  React.PropTypes.string,
   }
 
   render() {
