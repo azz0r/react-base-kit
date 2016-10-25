@@ -25,6 +25,7 @@
     "cross-spawn": "4.0.0",
     "css-loader": "^0.23.1",
     "css-modules-require-hook": "^4.0.5",
+    "debug": "^2.2.0",
     "emptyfunction": "^1.0.0",
     "enzyme": "^2.4.1",
     "eslint": "3.1.1",
@@ -48,10 +49,8 @@
     "mocha": "^3.1.2",
     "mock-local-storage": "^1.0.2",
     "node-sass": "^3.4.2",
-    "nodemon": "^1.11.0",
     "opn": "4.0.2",
     "postcss-loader": "0.9.1",
-    "promise": "7.1.1",
     "react-addons-test-utils": "^15.3.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "rimraf": "2.5.4",
@@ -60,11 +59,11 @@
     "style-loader": "^0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1"
+    "webpack-dev-server": "1.14.1",
+    "webpack-hot-middleware": "^2.13.0",
+    "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
-    "debug": "^2.2.0",
-    "istanbul": "1.0.0-alpha.2",
     "lodash.debounce": "^4.0.8",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
@@ -72,10 +71,9 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
+    "promise": "7.1.1",
     "redux-localstorage": "^0.4.1",
-    "superagent": "^2.3.0",
-    "webpack-hot-middleware": "^2.13.0",
-    "webpack-manifest-plugin": "^1.1.0"
+    "superagent": "^2.3.0"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
