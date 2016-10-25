@@ -11,7 +11,7 @@ const devConfig = Object.assign({}, defaultConfig, {
   devServer: {
     contentBase: './build/',
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   entry: [
     'react-hot-loader/patch',
@@ -22,7 +22,16 @@ const devConfig = Object.assign({}, defaultConfig, {
   ],
   watch: true,
   progress: true,
+  preLoaders: [
+    {
+      test: /\.js$/,
+      loader: 'eslint',
+      exclude: /node_modules/,
+      configFile: `${paths.appRoot}/.eslintrc`,
+    }
+  ]
 })
+
 devConfig.plugins.push(
   new webpack.HotModuleReplacementPlugin()
 )

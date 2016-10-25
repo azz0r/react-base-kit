@@ -1,7 +1,7 @@
-var path = require('path');
+var path = require('path')
 
 function resolveApp(relativePath) {
-  return path.resolve(relativePath);
+  return path.resolve(relativePath)
 }
 
 // after eject: we're in ./config/
@@ -14,4 +14,4 @@ module.exports = {
   appSrc: resolveApp('src'),
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveApp('node_modules'),
-};
+}
