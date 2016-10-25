@@ -9,6 +9,7 @@
 * Webpack dev & production configs inherit from a common config
 * Mocha, Chai & Enzyme testing
 * Redux
+* React Router 3.0
 * Stage 0, ES6
 
 ## 📕 Index
