@@ -7,9 +7,9 @@ const storeEnhancer = compose(
   persistState(),
   typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
     ? window.devToolsExtension()
-    : f => f
-);
+    : f => f,
+)
 
 export default (initialState) => {
-  return createStore(reducers, initialState, storeEnhancer);
-};
+  return createStore(reducers, initialState, storeEnhancer)
+}

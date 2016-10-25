@@ -9,7 +9,7 @@ class ContextHolder extends React.Component {
       onSetTitle: PropTypes.func.required,
       onSetMeta: PropTypes.func.required,
     }),
-    children: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired,
   }
 
   static childContextTypes = {

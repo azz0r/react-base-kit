@@ -1,5 +1,7 @@
-import * as types from './types';
+import * as types from './types'
 
 export function searchMade(query) {
-  return { type: types.SEARCH, query }
+  return {
+    type: types.SEARCH, query
+  }
 }

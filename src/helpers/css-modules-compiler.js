@@ -7,9 +7,9 @@ hook({
   preprocessCss: function (css, filepath) {
     var result =  sass.renderSync({
       data: css,
-      includePaths: [ path.resolve(filepath, '..') ]
+      includePaths: [ path.resolve(filepath, '..') ],
     });
 
-    return result.css;
+    return result.css
   }
 });
