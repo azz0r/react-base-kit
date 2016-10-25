@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import Venue from './venue'
 
 export default class Venues extends React.Component {
@@ -22,7 +22,9 @@ export default class Venues extends React.Component {
                   ? venue.photos.groups[0].items[0].prefix.suffix
                   : '',
                 rating: venue.rating,
-                checkinsCount: venue.stats ? venue.stats.checkinsCount : false
+                checkinsCount: venue.stats
+                  ? venue.stats.checkinsCount
+                  : false,
               }
               return (
                 <li className="list-group-item venues__venue">

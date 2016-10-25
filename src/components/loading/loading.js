@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import './stylesheets/loading'
 
 export default class Head extends Component {

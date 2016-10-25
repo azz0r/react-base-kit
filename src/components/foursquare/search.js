@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import request from 'superagent'
 import Loading from '../loading/loading'
 import Searches from './searches'
@@ -29,7 +29,7 @@ class Search extends React.Component {
     this.delayedCallback = _debounce((event) => {
       let query = event.target.value
       this.setState({
-        loading: true
+        loading: true,
       })
       this.props.dispatch(
         SearchActions.searchMade(query)
@@ -45,7 +45,7 @@ class Search extends React.Component {
             query,
           })
           this.setState({
-            loading: false
+            loading: false,
           })
         })
     }, 500)
@@ -71,10 +71,13 @@ class Search extends React.Component {
     }
 
     const error = (err) => {
-      console.warn(`Error code: ${err.code}; Error message: ${err.message}`);
+      console.warn(`
+        Error code: ${err.code},
+        Error message: ${err.message}
+      `)
     }
 
-    navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.getCurrentPosition(success, error, options)
   }
 
   render() {

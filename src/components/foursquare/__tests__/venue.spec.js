@@ -2,14 +2,14 @@ import 'jsdom-global/register'
 import {
   React,
   expect,
-  mount,
+  mount
 } from '../../../helpers/test'
 import faker from 'faker'
 import MainComponent from '../venue'
 
 describe('<Venue />', () => {
   const props = {
-    name: faker.lorem.sentence()
+    name: faker.lorem.sentence(),
   }
   const wrapper = mount(<MainComponent {...props} />)
   it('contains an <Venue /> component', () => {
@@ -17,7 +17,9 @@ describe('<Venue />', () => {
   })
   it('allows us to set props', () => {
     const name = faker.lorem.sentence()
-    wrapper.setProps({ name })
+    wrapper.setProps({ 
+      name,
+    })
     expect(wrapper.find('.venue__name').text().trim()).to.equal(name)
   })
 })

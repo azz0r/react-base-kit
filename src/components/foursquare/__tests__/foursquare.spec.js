@@ -4,7 +4,7 @@ import {
   Provider,
   expect,
   mount,
-  store,
+  store
 } from '../../../helpers/test'
 import MainComponent from '../foursquare'
 

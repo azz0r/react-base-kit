@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from "react"
 import emptyFunction from 'emptyfunction'
 
 class ContextHolder extends React.Component {
@@ -28,8 +28,7 @@ class ContextHolder extends React.Component {
   }
 
   render() {
-    const { children } = this.props
-    return React.Children.only(children)
+    return React.Children.only(this.props.children)
   }
 }
 

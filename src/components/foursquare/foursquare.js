@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import Venues from './venues'
 import Search from './search'
 import ResultsHeader from './results-header'
@@ -13,7 +13,10 @@ export default class FourSquare extends React.Component {
     query: '',
   }
 
-  onSearchUpdated = ( { venues, query } ) => {
+  onSearchUpdated = ( {
+    venues,
+    query,
+  } ) => {
     this.setState({
       venues,
       query,

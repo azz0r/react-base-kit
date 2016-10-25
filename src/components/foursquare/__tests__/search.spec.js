@@ -4,14 +4,14 @@ import {
   Provider,
   expect,
   mount,
-  store,
+  store
 } from '../../../helpers/test'
 import faker from 'faker'
 import MainComponent from '../search'
 
 describe('<Search />', () => {
   const props = {
-    name: faker.lorem.sentence()
+    name: faker.lorem.sentence(),
   }
   const wrapper = mount(
     <Provider store={store}>

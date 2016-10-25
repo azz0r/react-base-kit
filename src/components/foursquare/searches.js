@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 const maxSearches = 10
 
 export default class Searches extends React.Component {

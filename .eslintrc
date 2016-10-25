@@ -41,7 +41,13 @@
   },
   "rules": {
     "semi": ["error", "never"],
-    "comma-dangle": ["warn", "always"],
+    "comma-dangle": ["warn", {
+      "arrays": "always",
+      "objects": "always",
+      "imports": "never",
+      "exports": "never",
+      "functions": "ignore",
+    }],
     "array-callback-return": "warn",
     "dot-location": ["warn", "property"],
     "eqeqeq": ["warn", "allow-null"],
@@ -87,10 +93,6 @@
     "no-undef": "warn",
     "no-unexpected-multiline": "warn",
     "no-unreachable": "warn",
-    "no-unused-vars": ["warn", {
-      "vars": "local",
-      "args": "none"
-    }],
     "no-useless-concat": "warn",
     "no-useless-constructor": "warn",
     "no-useless-escape": "warn",

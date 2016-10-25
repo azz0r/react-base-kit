@@ -3,6 +3,6 @@ import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
   searches,
-});
+})
 
-export default rootReducer;
+export default rootReducer

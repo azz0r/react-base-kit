@@ -8,7 +8,10 @@ import configureStore from '../store/configure-store'
 
 const store = configureStore()
 
-const { assert, expect } = chai
+const {
+  assert,
+  expect,
+} = chai
 chai.should()
 chai.expect()
 chai.use(chaiEnzyme())
@@ -22,5 +25,5 @@ export {
   shallow,
   mount,
   render,
-  store,
+  store
 }
