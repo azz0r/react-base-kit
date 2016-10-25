@@ -1,10 +1,9 @@
-var path = require('path')
+import path from 'path'
 
 function resolveApp(relativePath) {
   return path.resolve(relativePath)
 }
 
-// after eject: we're in ./config/
 module.exports = {
   appBuild: resolveApp('build'),
   appHtml: resolveApp('index.html'),

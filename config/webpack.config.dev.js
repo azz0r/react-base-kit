@@ -28,8 +28,8 @@ const devConfig = Object.assign({}, defaultConfig, {
       loader: 'eslint',
       exclude: /node_modules/,
       configFile: `${paths.appRoot}/.eslintrc`,
-    }
-  ]
+    },
+  ],
 })
 
 devConfig.plugins.push(

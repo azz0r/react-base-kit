@@ -25,7 +25,14 @@ const prodConfig = Object.assign({}, defaultConfig, {
   devtool: false,
   warnings: false,
   entry: {
-    vendors: ['react', 'react-dom', 'lodash.debounce', 'react-helmet', 'react-router', 'superagent'],
+    vendors: [
+      'react',
+      'react-dom',
+      'lodash.debounce',
+      'react-helmet',
+      'react-router',
+      'superagent',
+    ],
     polyfill: require.resolve('./polyfills'),
     app: path.join(paths.appSrc, 'index'),
   },
@@ -34,7 +41,7 @@ const prodConfig = Object.assign({}, defaultConfig, {
     path: paths.appBuild,
     filename: "static/js/[name].[hash:8].bundle.js",
     chunkFilename: "static/js/[id].[hash:8].chunk.js",
-  }
+  },
 })
 
 const pluginPush = (data) => {
@@ -54,7 +61,7 @@ pluginPush(
 )
 pluginPush(
   new ManifestPlugin({
-    fileName: 'asset-manifest.json'
+    fileName: 'asset-manifest.json',
   })
 )
 pluginPush(
@@ -69,7 +76,11 @@ pluginPush(
 prodConfig.module.loaders.push(
   {
     test: /\.scss$/,
-    loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?sourceMap'),
+    loader:
+      ExtractTextPlugin.extract(
+        'style',
+        'css!postcss!sass?sourceMap'
+      ),
   }
 )
 module.exports = prodConfig

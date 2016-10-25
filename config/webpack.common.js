@@ -22,7 +22,12 @@ module.exports = {
   ],
   resolve: {
     root: path.resolve(__dirname),
-    extensions: ['', '.js', '.scss', '.json'],
+    extensions: [
+      '',
+      '.js',
+      '.scss',
+      '.json',
+    ],
     alias: {
       // This `alias` section can be safely removed after ejection.
       // We do this because `babel-runtime` may be inside `react-scripts`,
@@ -33,29 +38,38 @@ module.exports = {
       // a dependency in generated projects.
       // See https://github.com/facebookincubator/create-react-app/issues/255
       'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
-    }
+    },
   },
   resolveLoader: {
     root: paths.ownNodeModules,
-    moduleTemplates: ['*-loader'],
+    moduleTemplates: [
+      '*-loader',
+    ],
   },
   postcss: [
     autoprefixer({
-      browsers: ['last 2 versions'],
-    })
+      browsers: [
+        'last 2 versions',
+      ],
+    }),
   ],
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel'],
+        loaders: [
+          'babel',
+        ],
         exclude: /node_modules/,
-        include: paths.appSrc
+        include: paths.appSrc,
       },
       {
         test: /\.json$/,
-        include: [paths.appSrc, paths.appNodeModules],
-        loader: 'json'
+        include: [
+          paths.appSrc,
+          paths.appNodeModules,
+        ],
+        loader: 'json',
       },
       {
         test: /\.(jpg|png)$/,
@@ -64,12 +78,15 @@ module.exports = {
       },
       {
         test: /\.(ot|svg|woff|woff2)(\?.*)?$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [
+          paths.appSrc,
+          paths.appNodeModules,
+        ],
         loader: 'file',
         query: {
           name: 'static/media/[name].[hash:8].[ext]',
         },
       },
-    ]
-  }
+    ],
+  },
 }
