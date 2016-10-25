@@ -11,7 +11,7 @@ import { log, error } from '../config/log'
 
 log('Start development server')
 
-var DEFAULT_PORT = process.env.PORT || 3000
+const DEFAULT_PORT = process.env.PORT || 3000
 var compiler
 
 // TODO: hide this behind a flag and eliminate dead code on eject.
@@ -108,16 +108,16 @@ function setupCompiler(port) {
 
 function runDevServer(port) {
   new WebpackDevServer(compiler, {
-    historyApiFallback: true,
-    hot: true, // Note: only CSS is currently hot reloaded
     publicPath: config.output.publicPath,
+    historyApiFallback: true,
+    hot: true,
     quiet: true,
-    devServer: {
-      hot: true
-    },
     progress: true,
     colors: true,
     clientLogLevel: "error",
+    devServer: {
+      hot: true
+    },
     watchOptions: {
       ignored: /node_modules/
     }
