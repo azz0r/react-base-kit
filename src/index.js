@@ -12,7 +12,9 @@ export const App = (
 )
 
 try {
-  ReactDOM.render(App, rootEl)
+  process.env.NODE_ENV === 'development'
+    ? ReactDOM.render(App, rootEl)
+    : ReactDOM.renderToStaticMarkup(App, rootEl)
   if (module.hot) {
     module.hot.accept('./root', () => {
       const NextApp = require('./root').default // eslint-disable-line
