@@ -1,6 +1,7 @@
 process.env.NODE_ENV = 'production'
 
 import chalk from 'chalk'
+import dumpHtml from './html'
 import fs from 'fs'
 import path from 'path'
 import filesize from 'filesize'
@@ -9,12 +10,12 @@ import { sync as rimrafSync } from 'rimraf'
 import webpack from 'webpack'
 import config from '../config/webpack.config.prod'
 import paths from '../config/paths'
-import { log, error, exit } from '../config/log'
+import { log, error, exit, build } from '../config/log'
 
-log('Emptying build directory')
+build('Emptying build directory')
 rimrafSync(paths.appBuild + '/*')
 
-log('Creating an optimized production build')
+build('Creating an optimized production build')
 webpack(config).run(function(err, stats) {
   if (err) {
     error('Failed to create a production build')
@@ -22,8 +23,8 @@ webpack(config).run(function(err, stats) {
     process.exit(1)
   }
 
-  log(chalk.green('Compiled successfully.'))
-  log('File sizes after gzip:')
+  build(chalk.green('Compiled successfully.'))
+  build('File sizes after gzip:')
 
   var assets = stats.toJson().assets
     .filter(asset => /\.(js|css)$/.test(asset.name))
@@ -48,18 +49,19 @@ webpack(config).run(function(err, stats) {
       var rightPadding = ' '.repeat(longestSizeLabelLength - sizeLabel.length)
       sizeLabel += rightPadding
     }
-    log(
+    build(
       chalk.green(sizeLabel) +
       '  ' + chalk.dim(asset.folder + path.sep) +
       chalk.cyan(asset.name)
     )
   })
-  log(
+  dumpHtml()
+  build(
     chalk.green('Build production completed'),
     chalk.italic(paths.appBuild + '/*')
   )
   process.on('exit', (code) => {
     exit('closing')
-  });
+  })
   process.exit()
 })
