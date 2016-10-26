@@ -7,6 +7,8 @@
   "plugins": [
     "jsx-control-statements",
     "react-hot-loader/babel",
+    "transform-async-to-generator",
+    "syntax-async-functions",
     [
       "transform-runtime", {
         "polyfill": true,
