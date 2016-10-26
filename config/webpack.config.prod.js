@@ -37,10 +37,10 @@ const prodConfig = Object.assign({}, defaultConfig, {
     app: path.join(paths.appSrc, 'index'),
   },
   output: {
-    publicPath: "https://azz0r.github.io/react-base-kit/",
+    publicPath: "/",
     path: paths.appBuild,
-    filename: "static/js/[name].[hash:8].bundle.js",
-    chunkFilename: "static/js/[id].[hash:8].chunk.js",
+    filename: "static/js/a[name].[id].bundle.js",
+    chunkFilename: "static/js/a[id].chunk.js",
   },
 })
 

@@ -4,22 +4,18 @@ import { fetchPage } from './fetch-page'
 import { writePage } from './write-page'
 import { build, error } from '../config/log'
 
-const serverUrl = 'http://localhost:3000/'
+const serverUrl = 'http://localhost:3000'
 const outDir = './build/'
 const allRoutes = ['/', '/about']
 
-function dumpHtml() {
+function dumpHtml(resolve, reject) {
   build(`Building ${allRoutes.length} routes`)
   return new Promise((resolve, reject) => {
     Promise.all(allRoutes.map(function(route) {
-
       build(`Building Route: ${route}`)
 
       return new Promise((resolve, reject) => {
-        // Fetch page
         fetchPage(serverUrl, route).then(function(res) {
-
-          build(`Writing to ${outDir}`)
           writePage(
             outDir,
             [
@@ -34,18 +30,12 @@ function dumpHtml() {
         })
       })
     })).then(function() {
-      build('Completed static HTML dump:')
-
-      build(allRoutes.sort().map((route) => `->  ${route}`).join('\n'))
-
       return resolve()
     }).catch(function(e) {
-
-      build(e)
-
+      error(e)
       return reject(e)
     })
   })
 }
 
-export default dumpHtml
+dumpHtml()

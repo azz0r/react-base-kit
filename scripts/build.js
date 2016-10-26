@@ -1,7 +1,6 @@
 process.env.NODE_ENV = 'production'
 
 import chalk from 'chalk'
-import dumpHtml from './html'
 import fs from 'fs'
 import path from 'path'
 import filesize from 'filesize'
@@ -35,7 +34,7 @@ webpack(config).run(function(err, stats) {
         folder: path.join('build', path.dirname(asset.name)),
         name: path.basename(asset.name),
         size: size,
-        sizeLabel: filesize(size)
+        sizeLabel: filesize(size),
       }
     })
   assets.sort((a, b) => b.size - a.size)
@@ -55,11 +54,11 @@ webpack(config).run(function(err, stats) {
       chalk.cyan(asset.name)
     )
   })
-  dumpHtml()
-  build(
-    chalk.green('Build production completed'),
-    chalk.italic(paths.appBuild + '/*')
-  )
+
+  // dumpHtml()
+
+  build(chalk.green('Build production completed'))
+  build(chalk.italic(paths.appBuild + '/*'))
   process.on('exit', (code) => {
     exit('closing')
   })
