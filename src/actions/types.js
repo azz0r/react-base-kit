@@ -1,1 +1,1 @@
-export const SEARCH = 'SEARCH'
+export const MOVE_DROP = 'MOVE_DROP'

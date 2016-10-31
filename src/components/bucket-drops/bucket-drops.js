@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Draggable, Droppable } from "react-drag-and-drop"
-import * as SearchActions from '../../actions/searches'
+import * as bucketActions from '../../actions/buckets'
 import { connect } from 'react-redux'
 import "./stylesheets/bucket-drops"
 
@@ -41,7 +41,18 @@ class BucketDrops extends Component {
                     types={["wrestler"]}
                     onDrop={this.onDrop.bind(this, bucket.name)}>
                     <h3>{bucket.name}</h3>
-                    <ul className={`droppable col-xs-4 ${bucket.name}`}></ul>
+                    <ul className={`droppable col-xs-4 bucket bucket--${bucket.name}`}>
+                      {bucket.drops.map((drop) => {
+                        return (
+                          <li
+                            className="bucket__drop"
+                            >
+                            {drop.name}
+                          </li>
+                        )
+
+                      })}
+                    </ul>
                   </Droppable>
                 )
               })}
@@ -52,8 +63,12 @@ class BucketDrops extends Component {
     )
   }
 
-  onDrop(data, key) {
-    console.log(data, key)
+  onDrop(bucketName, dropName) {
+    this.props.dispatch(
+      bucketActions.moveDrop(bucketName, dropName.wrestler)
+    )
+    console.log('bucketName', bucketName)
+    console.log('dropName', dropName.wrestler)
     // => banana
   }
 }

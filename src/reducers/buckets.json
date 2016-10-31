@@ -1,14 +1,14 @@
 [
   {
     "name": "Raw",
-    "wrestlers": []
+    "drops": []
   },
   {
     "name": "Smackdown Live",
-    "wrestlers": []
+    "drops": []
   },
   {
     "name": "NXT",
-    "wrestlers": []
+    "drops": []
   }
 ]
