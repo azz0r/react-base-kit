@@ -42,11 +42,11 @@ class BucketDrops extends Component {
                     onDrop={this.onDrop.bind(this, bucket.name)}>
                     <h3>{bucket.name}</h3>
                     <ul className={`droppable col-xs-4 bucket bucket--${bucket.name.toLowerCase()}`}>
-                      {bucket.drops.map((drop) => {
+                      {bucket.drops.map((drop, key) => {
                         return (
                           <li
-                            className="bucket__drop"
-                            >
+                            key={key}
+                            className="bucket__drop">
                             {drop.name}
                           </li>
                         )
