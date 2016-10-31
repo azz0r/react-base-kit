@@ -1,4 +1,6 @@
-export default (state = [], action) => {
+import defaultState from "./buckets.json"
+
+export default (state = defaultState, action) => {
   switch (action.type) {
     case 'SEARCH':
       state.push(action.query)

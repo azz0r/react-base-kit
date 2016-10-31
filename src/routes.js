@@ -10,7 +10,7 @@ export default () => {
         <IndexRoute
           getComponent={(nextState, callback) => {
             require.ensure([], (require) => {
-              callback(null, require('./pages/foursquare').default)
+              callback(null, require('./pages/bucket-drops').default)
             })
           }}
          />
@@ -27,7 +27,7 @@ export default () => {
           path="*"
           getComponent={(nextState, callback) => {
             require.ensure([], (require) => {
-              callback(null, require('./pages/foursquare').default)
+              callback(null, require('./pages/bucket-drops').default)
             })
           }}
          />
