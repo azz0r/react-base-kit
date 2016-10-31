@@ -1,4 +1,17 @@
-.droppable {
+.bucket {
   height: 100px;
-  background-color: green;
+}
+.bucket__drop {
+
+}
+.bucket--raw {
+  background-color: red;
+
+}
+.bucket--nxt {
+  background-color: yellow;
+
+}
+.bucket--smackdown {
+  background-color: blue;
 }

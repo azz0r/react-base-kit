@@ -41,7 +41,7 @@ class BucketDrops extends Component {
                     types={["wrestler"]}
                     onDrop={this.onDrop.bind(this, bucket.name)}>
                     <h3>{bucket.name}</h3>
-                    <ul className={`droppable col-xs-4 bucket bucket--${bucket.name}`}>
+                    <ul className={`droppable col-xs-4 bucket bucket--${bucket.name.toLowerCase()}`}>
                       {bucket.drops.map((drop) => {
                         return (
                           <li
