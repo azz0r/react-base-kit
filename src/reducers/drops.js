@@ -1,4 +1,7 @@
 import defaultState from "./drops.default"
+defaultState.forEach((drop, key) => {
+  defaultState[key].bucket = "default"
+})
 
 export default (state = defaultState, action) => {
   let newState = JSON.parse(JSON.stringify(state))

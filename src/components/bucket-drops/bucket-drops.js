@@ -78,10 +78,15 @@ class BucketDrops extends Component {
                 <div className={`droppable col-xs-4 drops drops--${toSlug(bucket.name)}`}>
                   {this.props.drops.filter((drop) => drop.brand === bucket.name).map((drop, key) => {
                     return (
-                      <Drop
+                      <Draggable
                         key={key}
-                        name={drop.name}
-                      />
+                        type="wrestler"
+                        data={drop.name}>
+                        <Drop
+                          key={key}
+                          name={drop.name}
+                        />
+                      </Draggable>
                     )
                   })}
                 </div>
