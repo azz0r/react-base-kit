@@ -22,6 +22,7 @@ export default class PageBucketDrops extends Component {
         </header>
         <hr />
         <BucketDrops />
+        <hr />
       </div>
     )
   }

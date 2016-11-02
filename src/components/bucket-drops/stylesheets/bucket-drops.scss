@@ -12,6 +12,13 @@ body {
   }
 }
 
+hr {
+  border: 1px solid $smackdown;
+}
+hr:first-of-type {
+  border: 1px solid $raw;
+}
+
 h1 {
   font-size: 50px;
   img {
@@ -20,6 +27,9 @@ h1 {
 }
 
 // bucket drops
+.bucket-drops {
+  min-height: 500px;
+}
 .bucket {
   &__logo {
     height: 60px;
@@ -27,8 +37,7 @@ h1 {
 }
 
 .drops {
-  min-height: 150px;
-  height: auto;
+  height: 500px;
   width: 100%;
   padding: 15px;
 }
@@ -44,7 +53,9 @@ h1 {
   float: left;
   margin: 5px;
 
-  &__name {}
+  &__name {
+    display: none;
+  }
   &__image {
     position: relative;
     left: 50%;

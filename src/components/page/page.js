@@ -9,7 +9,6 @@ export default class Page extends Component {
       <div>
         <Head />
         {this.props.children}
-        <hr />
         <Link to={'/'}>
           Search
         </Link> | <Link to={'/about'}>

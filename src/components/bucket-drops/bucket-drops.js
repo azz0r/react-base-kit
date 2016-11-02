@@ -62,7 +62,7 @@ class BucketDrops extends Component {
       )
     }
     return (
-      <div>
+      <div className="bucket-drops">
         <div className="row">
           <div className="col-xs-3">
             <h2>On the bench...</h2>
@@ -74,7 +74,7 @@ class BucketDrops extends Component {
                   data={drop.name}>
                   <Drop
                     key={key}
-                    {...drop}
+                    name={drop.name}
                   />
                 </Draggable>
               )
@@ -104,7 +104,7 @@ class BucketDrops extends Component {
                         return (
                           <Drop
                             key={key}
-                            {...drop}
+                            name={drop.name}
                           />
                         )
                       })}
