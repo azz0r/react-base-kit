@@ -10,7 +10,7 @@ export default (state = defaultState, action) => {
       state.filter((bucket, key) => {
         if (
           (bucket.name === action.bucketName) &&
-          (!bucket.drops.includes(drop))
+          (bucket.drops.filter((obj) => obj.name === drop.name).length === 0)
         ) {
           newState[key].drops.push(
             drop
