@@ -65,6 +65,7 @@
     "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^4.0.0",
     "eslint-plugin-react": "^6.4.1",
     "lodash.debounce": "^4.0.8",
     "promise": "7.1.1",

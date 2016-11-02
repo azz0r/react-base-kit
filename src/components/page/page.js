@@ -9,7 +9,13 @@ export default class Page extends Component {
       <div>
         <Head />
         <header>
-          <h1>FourSquare Popular Venues Search</h1>
+          <h1>
+           <img src="/static/media/logo.png"
+             alt=""
+             title=""
+           />
+           <span>Popular Venues Search</span>
+           </h1>
         </header>
         {this.props.children}
         <hr />
