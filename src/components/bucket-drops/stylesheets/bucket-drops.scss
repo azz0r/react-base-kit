@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  font-size: 60px;  
+  font-size: 60px;
   img {
     max-height: 80px;
   }
@@ -29,6 +29,7 @@ a {
 
 .bucket__drop {
   list-style: none;
+  display: list-item;
 }
 
 .bucket__logo {

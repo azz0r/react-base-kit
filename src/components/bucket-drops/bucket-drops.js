@@ -16,19 +16,28 @@ class BucketDrops extends Component {
   displayName = "BucketDrops"
 
   render() {
+    const Drop = ({ name }) => {
+      return (
+        <span className="bucket__drop">
+          {name}
+        </span>
+      )
+    }
     return (
       <div>
         <div className="row">
           <div className="col-xs-3">
+            <h2>On the bench...</h2>
             {this.props.drops.map((drop, key) => {
               return (
                 <Draggable
                   key={key}
                   type="wrestler"
                   data={drop.name}>
-                  <li className="bucket__drop">
-                    {drop.name}
-                  </li>
+                  <Drop
+                    key={key}
+                    {...drop}
+                  />
                 </Draggable>
               )
             })}
@@ -38,8 +47,8 @@ class BucketDrops extends Component {
               {this.props.buckets.map((bucket, key) => {
                 return (
                   <Droppable
-                    className="bucket col-xs-4"
                     key={key}
+                    className="bucket col-xs-4"
                     types={["wrestler"]}
                     onDrop={this.onDrop.bind(this, bucket.name)}>
                     <p>
@@ -53,11 +62,10 @@ class BucketDrops extends Component {
                     <ul className={`droppable col-xs-4 bucket__drops bucket__drops--${toSlug(bucket.name)}`}>
                       {bucket.drops.map((drop, key) => {
                         return (
-                          <li
+                          <Drop
                             key={key}
-                            className="bucket__drop">
-                            {drop.name}
-                          </li>
+                            {...drop}
+                          />
                         )
                       })}
                     </ul>
