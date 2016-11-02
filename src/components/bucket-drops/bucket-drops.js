@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Draggable, Droppable } from "react-drag-and-drop"
-import * as bucketActions from '../../actions/buckets'
-import { connect } from 'react-redux'
+import * as bucketActions from "../../actions/buckets"
+import { connect } from "react-redux"
 import "./stylesheets/bucket-drops"
 
 class BucketDrops extends Component {
@@ -50,7 +50,6 @@ class BucketDrops extends Component {
                             {drop.name}
                           </li>
                         )
-
                       })}
                     </ul>
                   </Droppable>
@@ -67,12 +66,8 @@ class BucketDrops extends Component {
     this.props.dispatch(
       bucketActions.moveDrop(bucketName, dropName.wrestler)
     )
-    console.log('bucketName', bucketName)
-    console.log('dropName', dropName.wrestler)
-    // => banana
   }
 }
-
 export default connect(state => ({
   buckets: state.buckets,
   drops: state.drops,
