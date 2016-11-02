@@ -36,8 +36,23 @@ h1 {
 .drop {
   list-style: none;
   display: list-item;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ECECEC;
+  overflow: hidden;
+  float: left;
+  margin: 5px;
+
   &__name {}
-  &__image {}
+  &__image {
+    position: relative;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 200%;
+    max-width: none;
+  }
 }
 
 // bucket drops modifiers

@@ -1,12 +1,20 @@
-import defaultState from "./drops.json"
+import defaultState from "./drops.default"
 
 export default (state = defaultState, action) => {
+  let newState = JSON.parse(JSON.stringify(state))
   switch (action.type) {
-    case 'SEARCH':
-      state.push(action.query)
-      break
+    case 'MOVE_DROP':
+      let drop = {
+        name: action.dropName,
+      }
+      newState.forEach((drop, key) => {
+        if (drop.name === action.dropName) {
+          newState[key].brand = action.bucketName
+        }
+      })
+      return newState
       default:
     break
   }
-  return state
+  return newState
 }

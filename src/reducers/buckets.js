@@ -1,9 +1,9 @@
-import defaultState from "./buckets.json"
+import defaultState from "./buckets.default"
 
 export default (state = defaultState, action) => {
   let newState = JSON.parse(JSON.stringify(state))
   switch (action.type) {
-    case 'MOVE_DROP':
+    case 'MOVE_DROP_TO_BUCKET':
       let drop = {
         name: action.dropName,
       }

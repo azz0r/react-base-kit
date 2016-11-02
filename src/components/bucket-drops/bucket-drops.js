@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Draggable, Droppable } from "react-drag-and-drop"
 import * as bucketActions from "../../actions/buckets"
+import * as dropsActions from "../../actions/drops"
 import { connect } from "react-redux"
 import { toSlug } from "./helpers"
 import "./stylesheets/bucket-drops"
@@ -38,7 +39,7 @@ class BucketDrops extends Component {
         <div className="row">
           <div className="col-xs-3">
             <h2>On the bench...</h2>
-            {this.props.drops.map((drop, key) => {
+            {this.props.drops.filter((drop) => drop.brand === "").map((drop, key) => {
               return (
                 <Draggable
                   key={key}
@@ -69,7 +70,7 @@ class BucketDrops extends Component {
                         className="bucket__logo"
                       />
                     </p>
-                    <ul className={`droppable col-xs-4 drops drops--${toSlug(bucket.name)}`}>
+                    <div className={`droppable col-xs-4 drops drops--${toSlug(bucket.name)}`}>
                       {bucket.drops.map((drop, key) => {
                         return (
                           <Drop
@@ -78,7 +79,7 @@ class BucketDrops extends Component {
                           />
                         )
                       })}
-                    </ul>
+                    </div>
                   </Droppable>
                 )
               })}
@@ -92,6 +93,9 @@ class BucketDrops extends Component {
   onDrop(bucketName, dropName) {
     this.props.dispatch(
       bucketActions.moveDrop(bucketName, dropName.wrestler)
+    )
+    this.props.dispatch(
+      dropsActions.moveDrop(bucketName, dropName.wrestler)
     )
   }
 }
