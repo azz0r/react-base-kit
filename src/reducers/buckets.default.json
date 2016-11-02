@@ -1,14 +1,14 @@
 [
   {
-    "name": "Raw",
-    "drops": []
+    "name": "Sidelines"
   },
   {
-    "name": "Smackdown Live",
-    "drops": []
+    "name": "Raw"
   },
   {
-    "name": "NXT",
-    "drops": []
+    "name": "Smackdown Live"
+  },
+  {
+    "name": "NXT"
   }
 ]
