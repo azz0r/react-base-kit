@@ -9,15 +9,30 @@ body {
   color: $color;
 }
 
+h1 {
+  font-size: 60px;  
+  img {
+    max-height: 80px;
+  }
+}
+
 a {
   color: $color;
 }
 
 .bucket__drops {
-  height: 100px;
+  min-height: 150px;
+  height: auto;
+  width: 100%;
+  padding: 15px;
 }
+
 .bucket__drop {
   list-style: none;
+}
+
+.bucket__logo {
+  height: 60px;
 }
 
 // Modifiers

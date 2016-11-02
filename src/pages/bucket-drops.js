@@ -11,8 +11,16 @@ export default class PageBucketDrops extends Component {
       <div>
         <Helmet title="Bucket Drops" />
         <header>
-          <h1>WWE Draft Generator</h1>
+          <h1>
+            <img
+              src="/static/media/wwe.png"
+              alt="WWE"
+              title="WWE"
+            />
+            <span> Draft Generator</span>
+          </h1>
         </header>
+        <hr />
         <BucketDrops />
       </div>
     )

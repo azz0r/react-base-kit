@@ -19,7 +19,7 @@ class BucketDrops extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-xs-4">
+          <div className="col-xs-3">
             {this.props.drops.map((drop, key) => {
               return (
                 <Draggable
@@ -33,12 +33,12 @@ class BucketDrops extends Component {
               )
             })}
           </div>
-          <div className="col-xs-8">
+          <div className="col-xs-9">
             <div className="row">
               {this.props.buckets.map((bucket, key) => {
                 return (
                   <Droppable
-                    className="bucket"
+                    className="bucket col-xs-4"
                     key={key}
                     types={["wrestler"]}
                     onDrop={this.onDrop.bind(this, bucket.name)}>
@@ -47,6 +47,7 @@ class BucketDrops extends Component {
                         src={`/static/media/${toSlug(bucket.name)}.png`}
                         title={bucket.name}
                         alt={bucket.name}
+                        className="bucket__logo"
                       />
                     </p>
                     <ul className={`droppable col-xs-4 bucket__drops bucket__drops--${toSlug(bucket.name)}`}>
