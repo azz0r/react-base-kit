@@ -19,27 +19,9 @@ class BucketDrops extends Component {
     )
   }
 
-  onResetGame = (event) => {
-    event.preventDefault()
-    this.props.dispatch({
-      type: "RESET",
-    })
-  }
-
   displayName = "BucketDrops"
 
   render() {
-    const ResetButton = () => {
-      return (
-        <a
-          href="#"
-          className="btn clearfix"
-          onKeyPress={this.onResetGame}
-          onClick={this.onResetGame}>
-          Reset Choices
-        </a>
-      )
-    }
     const Drop = ({ name }) => {
       return (
         <div className="drop">
