@@ -8,9 +8,6 @@ export default class Page extends Component {
     return (
       <div>
         <Head />
-        <header>
-          <h1>FourSquare Popular Venues Search</h1>
-        </header>
         {this.props.children}
         <hr />
         <Link to={'/'}>

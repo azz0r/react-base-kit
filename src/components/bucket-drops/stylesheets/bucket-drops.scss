@@ -8,24 +8,30 @@ body {
   background-color: $bg;
   color: $color;
 }
+
 a {
   color: $color;
 }
-.bucket {
+
+.bucket__drops {
   height: 100px;
 }
+.bucket__drop {
+  list-style: none;
+}
+
 // Modifiers
-.bucket--raw {
+.bucket__drops--raw {
   background-color: $raw;
   color: white;
 }
 
-.bucket--nxt {
+.bucket__drops--nxt {
   background-color: $nxt;
   color: black;
 }
 
-.bucket--smackdown-live {
+.bucket__drops--smackdown-live {
   background-color: $smackdown;
   color: white;
 }
