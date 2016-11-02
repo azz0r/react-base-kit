@@ -1,8 +1,9 @@
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var autoprefixer = require('autoprefixer')
-var path = require('path')
-var paths = require('./paths')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const autoprefixer = require('autoprefixer')
+const path = require('path')
+const paths = require('./paths')
 
 module.exports = {
   output: {
@@ -13,6 +14,12 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('static/css/[name].[hash:8].css'),
+    new CopyWebpackPlugin([
+      {
+        from: paths.appImgs,
+        to: 'static/media/'
+      },
+    ]),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.PORT': JSON.stringify(process.env.PORT),
@@ -72,14 +79,10 @@ module.exports = {
         loader: 'json',
       },
       {
-        test: /\.(jpg|png)$/,
-        loader: 'file?name=[path][name].[hash].[ext]',
-        include: paths.appImgs,
-      },
-      {
-        test: /\.(ot|svg|woff|woff2)(\?.*)?$/,
+        test: /\.(ot|svg|woff|woff2|jpg|png)(\?.*)?$/,
         include: [
           paths.appSrc,
+          paths.appImgs,
           paths.appNodeModules,
         ],
         loader: 'file',

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Draggable, Droppable } from "react-drag-and-drop"
 import * as bucketActions from "../../actions/buckets"
 import { connect } from "react-redux"
+import { toSlug } from "./helpers"
 import "./stylesheets/bucket-drops"
 
 class BucketDrops extends Component {
@@ -40,8 +41,14 @@ class BucketDrops extends Component {
                     key={key}
                     types={["wrestler"]}
                     onDrop={this.onDrop.bind(this, bucket.name)}>
-                    <h3>{bucket.name}</h3>
-                    <ul className={`droppable col-xs-4 bucket bucket--${bucket.name.toLowerCase()}`}>
+                    <p>
+                      <img
+                        src={`/static/media/${toSlug(bucket.name)}.png`}
+                        title={bucket.name}
+                        alt={bucket.name}
+                      />
+                    </p>
+                    <ul className={`droppable col-xs-4 bucket bucket--${toSlug(bucket.name)}`}>
                       {bucket.drops.map((drop, key) => {
                         return (
                           <li

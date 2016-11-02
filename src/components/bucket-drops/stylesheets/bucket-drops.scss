@@ -1,17 +1,31 @@
+$bg: #1e1e1e;
+$color: white;
+$smackdown: #3b30fe;
+$raw: #eb1826;
+$nxt: #ffc71c;
+
+body {
+  background-color: $bg;
+  color: $color;
+}
+a {
+  color: $color;
+}
 .bucket {
   height: 100px;
 }
-.bucket__drop {
-
-}
+// Modifiers
 .bucket--raw {
-  background-color: red;
-
+  background-color: $raw;
+  color: white;
 }
+
 .bucket--nxt {
-  background-color: yellow;
-
+  background-color: $nxt;
+  color: black;
 }
-.bucket--smackdown {
-  background-color: blue;
+
+.bucket--smackdown-live {
+  background-color: $smackdown;
+  color: white;
 }

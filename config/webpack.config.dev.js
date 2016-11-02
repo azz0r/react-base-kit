@@ -8,6 +8,7 @@ import { log } from './log'
 
 const devConfig = Object.assign({}, defaultConfig, {
   devtool: "source-map",
+  publicPath: '/assets/',
   devServer: {
     contentBase: './build/',
     hot: true,
