@@ -14,9 +14,36 @@ class BucketDrops extends Component {
     drops:  React.PropTypes.array.isRequired,
   }
 
+  onDrop(bucketName, dropName) {
+    this.props.dispatch(
+      bucketActions.moveDrop(bucketName, dropName.wrestler)
+    )
+    this.props.dispatch(
+      dropsActions.moveDrop(bucketName, dropName.wrestler)
+    )
+  }
+
+  onResetGame = (event) => {
+    event.preventDefault()
+    this.props.dispatch({
+      type: "RESET",
+    })
+  }
+
   displayName = "BucketDrops"
 
   render() {
+    const ResetButton = () => {
+      return (
+        <a
+          href="#"
+          className="btn clearfix"
+          onKeyPress={this.onResetGame}
+          onClick={this.onResetGame}>
+          Reset Choices
+        </a>
+      )
+    }
     const Drop = ({ name }) => {
       return (
         <div className="drop">
@@ -52,6 +79,8 @@ class BucketDrops extends Component {
                 </Draggable>
               )
             })}
+            <br className="clearfix" />
+            <ResetButton />
           </div>
           <div className="col-xs-9">
             <div className="row">
@@ -87,15 +116,6 @@ class BucketDrops extends Component {
           </div>
         </div>
       </div>
-    )
-  }
-
-  onDrop(bucketName, dropName) {
-    this.props.dispatch(
-      bucketActions.moveDrop(bucketName, dropName.wrestler)
-    )
-    this.props.dispatch(
-      dropsActions.moveDrop(bucketName, dropName.wrestler)
     )
   }
 }
