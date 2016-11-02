@@ -70,7 +70,7 @@ function setupCompiler(port) {
       log(chalk.green('Compiled successfully'))
       const url = 'http://localhost:' + port + '/'
       log(url)
-      opn(url)
+      // opn(url)
       return
     }
 

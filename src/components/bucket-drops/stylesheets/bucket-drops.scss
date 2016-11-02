@@ -7,6 +7,9 @@ $nxt: #ffc71c;
 body {
   background-color: $bg;
   color: $color;
+  a {
+    color: $color;
+  }
 }
 
 h1 {
@@ -16,38 +19,39 @@ h1 {
   }
 }
 
-a {
-  color: $color;
+// bucket drops
+.bucket {
+  &__logo {
+    height: 60px;
+  }
 }
 
-.bucket__drops {
+.drops {
   min-height: 150px;
   height: auto;
   width: 100%;
   padding: 15px;
 }
 
-.bucket__drop {
+.drop {
   list-style: none;
   display: list-item;
+  &__name {}
+  &__image {}
 }
 
-.bucket__logo {
-  height: 60px;
-}
-
-// Modifiers
-.bucket__drops--raw {
+// bucket drops modifiers
+.drops--raw {
   background-color: $raw;
   color: white;
 }
 
-.bucket__drops--nxt {
+.drops--nxt {
   background-color: $nxt;
   color: black;
 }
 
-.bucket__drops--smackdown-live {
+.drops--smackdown-live {
   background-color: $smackdown;
   color: white;
 }

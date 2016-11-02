@@ -18,9 +18,19 @@ class BucketDrops extends Component {
   render() {
     const Drop = ({ name }) => {
       return (
-        <span className="bucket__drop">
-          {name}
-        </span>
+        <div className="drop">
+          <span>
+            <img
+              className="drop__image"
+              src={`/static/media/${toSlug(name)}.png`}
+              alt={name}
+              title={name}
+            />
+          </span>
+          <h5 className="drop__name">
+            {name}
+          </h5>
+        </div>
       )
     }
     return (
@@ -51,7 +61,7 @@ class BucketDrops extends Component {
                     className="bucket col-xs-4"
                     types={["wrestler"]}
                     onDrop={this.onDrop.bind(this, bucket.name)}>
-                    <p>
+                    <p className="text-center">
                       <img
                         src={`/static/media/${toSlug(bucket.name)}.png`}
                         title={bucket.name}
@@ -59,7 +69,7 @@ class BucketDrops extends Component {
                         className="bucket__logo"
                       />
                     </p>
-                    <ul className={`droppable col-xs-4 bucket__drops bucket__drops--${toSlug(bucket.name)}`}>
+                    <ul className={`droppable col-xs-4 drops drops--${toSlug(bucket.name)}`}>
                       {bucket.drops.map((drop, key) => {
                         return (
                           <Drop
