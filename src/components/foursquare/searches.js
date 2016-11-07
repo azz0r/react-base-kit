@@ -1,4 +1,5 @@
 import React from "react"
+import "./stylesheets/previous-searches"
 const maxSearches = 10 // todo move to constants
 
 export default class Searches extends React.Component {
@@ -13,8 +14,8 @@ export default class Searches extends React.Component {
     return (
       <div>
         {this.props.searches
-            .slice(Math.max(this.props.searches.length - maxSearches, 1))
-            .map((query, key) => {
+          .slice(Math.max(this.props.searches.length - maxSearches, 1))
+          .map((query, key) => {
           return (
             <span
               key={key}

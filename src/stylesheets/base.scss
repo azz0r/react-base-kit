@@ -1,26 +1,37 @@
 body {
+  font-family: normal 13px / 140% 'Helvetica Neue', Helvetica;
+  font-size: 1.5em;
   margin: 0;
   padding: 0;
-	font-size: 1.5em;
 }
+
 ul {
   padding: 0;
 }
-h1, h2, h3, h4 {
+
+h1,
+h2,
+h3,
+h4 {
   padding: 0;
 }
-h1 {
-  font-size: 3em;
-}
+
 h2 {
-	font-size: 2em;
+  font-size: 2em;
 }
+
 h4 {
   font-size: 1em;
 }
-a, a:visited {
-  color: black;
-}
-a:hover {
-  color: #999;
+
+a {
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #000;
+  }
+
 }

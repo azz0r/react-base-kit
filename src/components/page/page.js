@@ -10,7 +10,7 @@ export default class Page extends React.Component {
         <Head />
         {this.props.children}
         <hr />
-        <a href={constants.baseUrl}>Home</a> | <a href={`${constants.baseUrl}/about`}>
+        <a href={constants.baseUrl}>Home</a> | <a href={`${constants.baseUrl}about`}>
           About
         </a>
       </div>

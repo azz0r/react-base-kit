@@ -1,11 +1,10 @@
-h1 {
-  background-color: #2d5bde;
-  color: #fff;
+$foursquare-bg: #2d5bde;
+$foursquare-color: #fff;
 
-  img {
-    padding: 15px;
-  }
+
+
+.foursquare {
+  min-height: 500px;
 }
 
-@import 'search';
-@import 'venues';
+@import 'body';

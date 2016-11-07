@@ -6,6 +6,7 @@ import config from "./config"
 import * as SearchActions from "../../actions/searches"
 import _debounce from "lodash.debounce"
 import { connect } from "react-redux"
+import "./stylesheets/search"
 
 class Search extends React.Component {
 

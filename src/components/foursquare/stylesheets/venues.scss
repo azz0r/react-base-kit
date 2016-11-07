@@ -6,16 +6,7 @@
   &__venue {
     border-radius: none;
   }
-}
-
-.venue {
-
-  &__checkins {
-    float: right;
-  }
-
-  &__rating {
-    float: right;
-  }
 
 }
+
+@import 'venue';

@@ -1,5 +1,6 @@
 import React from "react"
 import Venue from "./venue"
+import "./stylesheets/venues"
 
 export default class Venues extends React.Component {
 
