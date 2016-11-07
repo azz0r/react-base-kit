@@ -1,9 +1,9 @@
 import React from "react"
-const maxSearches = 10
+const maxSearches = 10 // todo move to constants
 
 export default class Searches extends React.Component {
 
-  displayName = 'Searches'
+  displayName = "Searches"
 
   static propTypes = {
     searches: React.PropTypes.array,

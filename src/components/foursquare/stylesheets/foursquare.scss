@@ -1,14 +1,10 @@
-header h1 {
+h1 {
   background-color: #2d5bde;
-  color: white;
+  color: #fff;
+
   img {
     padding: 15px;
   }
-}
-
-.foursquare {
-  font-family: normal 13px/140% "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif;
-  &__results {}
 }
 
 @import 'search';

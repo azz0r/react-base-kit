@@ -4,6 +4,7 @@
   "scripts": {
     "start": "NODE_ENV=development DEBUG=app:* babel-node ./scripts/start.js",
     "build": "NODE_ENV=production DEBUG=app:* babel-node ./scripts/build.js",
+    "build:deploy": "NODE_ENV=production DEBUG=app:* babel-node ./scripts/build.js && npm run deploy",
     "test": "NODE_ENV=test mocha --recursive -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/**/*.spec.js",
     "test:coverage": "istanbul cover _mocha -- --require babel-register -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/**/*.spec.js",
     "deploy": "gh-pages-deploy",

@@ -1,29 +1,18 @@
-import React, { Component } from "react"
-import { Link } from 'react-router'
-import Head from '../head/head'
-import '../../stylesheets/base'
+import React from "react"
+import Head from "../head/head"
+import "../../stylesheets/base"
+import constants from "../../constants"
 
-export default class Page extends Component {
+export default class Page extends React.Component {
   render() {
     return (
       <div>
         <Head />
-        <header>
-          <h1>
-           <img src="/static/media/logo.png"
-             alt=""
-             title=""
-           />
-           <span>Popular Venues Search</span>
-           </h1>
-        </header>
         {this.props.children}
         <hr />
-        <Link to={'/'}>
-          Search
-        </Link> | <Link to={'/about'}>
+        <a href={constants.baseUrl}>Home</a> | <a href={`${constants.baseUrl}/about`}>
           About
-        </Link>
+        </a>
       </div>
     )
   }

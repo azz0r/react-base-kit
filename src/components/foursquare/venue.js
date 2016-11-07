@@ -2,7 +2,7 @@ import React from "react"
 
 export default class Venue extends React.Component {
 
-  displayName = 'Venue'
+  displayName = "Venue"
 
   static propTypes = {
     name: React.PropTypes.string.isRequired,

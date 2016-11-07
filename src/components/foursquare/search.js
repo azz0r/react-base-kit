@@ -1,15 +1,15 @@
 import React from "react"
-import request from 'superagent'
-import Loading from '../loading/loading'
-import Searches from './searches'
-import config from './config'
-import * as SearchActions from '../../actions/searches'
-import _debounce from 'lodash.debounce'
-import { connect } from 'react-redux'
+import request from "superagent"
+import Loading from "../loading/loading"
+import Searches from "./searches"
+import config from "./config"
+import * as SearchActions from "../../actions/searches"
+import _debounce from "lodash.debounce"
+import { connect } from "react-redux"
 
 class Search extends React.Component {
 
-  displayName = 'Search'
+  displayName = "Search"
 
   static propTypes = {
     dispatch: React.PropTypes.func.isRequired,
@@ -18,7 +18,7 @@ class Search extends React.Component {
   }
 
   state = {
-    query: '',
+    query: "",
     venues: [],
     long: 51.481364199999994,
     lat: -0.12015400000000001,
@@ -36,7 +36,7 @@ class Search extends React.Component {
       )
       this.openRequest = request.get(`
         ${config.apiUrl}?query=${query}&client_id=${config.clientId}&client_secret=${config.clientSecret}&style=${config.style}&v=${config.v}&ll=${this.state.long},${this.state.lat}`)
-        .accept('json')
+        .accept("json")
         .end((err, res) => {
           if(err) return
           let venues = res.body.response.groups[0].items

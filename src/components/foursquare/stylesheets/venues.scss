@@ -1,17 +1,21 @@
 .venues {
+
   padding-left: 0;
   padding-right: 0;
-  &__list {}
+
   &__venue {
     border-radius: none;
   }
 }
+
 .venue {
-  &__name {}
+
   &__checkins {
-    float : right;
+    float: right;
   }
+
   &__rating {
     float: right;
   }
+
 }

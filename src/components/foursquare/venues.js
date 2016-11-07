@@ -1,9 +1,9 @@
 import React from "react"
-import Venue from './venue'
+import Venue from "./venue"
 
 export default class Venues extends React.Component {
 
-  displayName = 'Venues'
+  displayName = "Venues"
 
   static propTypes = {
     venues: React.PropTypes.array.isRequired,
@@ -20,7 +20,7 @@ export default class Venues extends React.Component {
                 name: venue.name,
                 img: venue.photos && venue.photos.groups[0]
                   ? venue.photos.groups[0].items[0].prefix.suffix
-                  : '',
+                  : "",
                 rating: venue.rating,
                 checkinsCount: venue.stats
                   ? venue.stats.checkinsCount

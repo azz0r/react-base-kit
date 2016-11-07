@@ -2,7 +2,7 @@ import React from "react"
 
 export default class ResultsHeader extends React.Component {
 
-  displayName = 'ResultsHeader'
+  displayName = "ResultsHeader"
 
   static propTypes = {
     query: React.PropTypes.string.isRequired,

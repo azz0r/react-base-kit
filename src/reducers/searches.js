@@ -1,6 +1,6 @@
 export default (state = [], action) => {
   switch (action.type) {
-    case 'SEARCH':
+    case "SEARCH":
       state.push(action.query)
       break
       default:
