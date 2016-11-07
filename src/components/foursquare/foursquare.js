@@ -28,7 +28,7 @@ export default class FourSquare extends React.Component {
       <div>
         <header>
           <h1>
-           <img src="/static/media/logo.png"
+           <img src="static/media/logo.png"
              alt=""
              title=""
            />
