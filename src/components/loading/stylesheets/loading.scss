@@ -1,26 +1,16 @@
 .loading {
-  $size: 20px;
-  &__line {
-    display: inline-block;
-    width: $size;
-    height: $size;
-    border-radius: $size;
-    background-color: #4b9cdb;
-    margin-right: 5px;
-    &:nth-last-child(1) {
-      animation: loadingC .6s .1s linear infinite;
-    }
-    &:nth-last-child(2) {
-      animation: loadingC .6s .2s linear infinite;
-    }
-    &:nth-last-child(3) {
-      animation: loadingC .6s .3s linear infinite;
-    }
-  }
+  height: 100px;
+  background-color: green;
+  width: 0;
+  animation-name: loading;
+  animation-duration: 4s;
 }
 
-@keyframes loadingC {
-  0 {transform: translate(0,0);}
-  50% {transform: translate(0,15px);}
-  100% {transform: translate(0,0);}
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
