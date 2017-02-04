@@ -48,6 +48,7 @@
       "exports": "never",
       "functions": "ignore",
     }],
+    "no-unused-vars": "error",
     "array-callback-return": "warn",
     "dot-location": ["warn", "property"],
     "eqeqeq": ["warn", "allow-null"],
@@ -100,6 +101,9 @@
       "ignoreDestructuring": false,
       "ignoreImport": false,
       "ignoreExport": false
-    }]
+    }],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": 1,
+    "react/react-in-jsx-scope": 1
   }
 }

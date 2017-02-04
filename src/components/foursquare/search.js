@@ -57,7 +57,7 @@ class Search extends React.Component {
     this.delayedCallback(event)
   }
 
-  onGeolocateMe = (event) => {
+  onGeolocateMe = () => {
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,

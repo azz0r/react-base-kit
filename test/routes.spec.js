@@ -1,6 +1,6 @@
-import routes from "../routes"
+import routes from "../src/routes"
 
-describe("<Routes />", ()=>{
+describe("<Routes />", () => {
   it("should always start with /", () => {
     Object.keys(routes).forEach(route => {
       expect(routes[route].path.substr(0,1)).to.equal("/", "route does not start with /")

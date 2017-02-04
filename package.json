@@ -5,11 +5,16 @@
     "start": "NODE_ENV=development DEBUG=app:* babel-node ./scripts/start.js",
     "build": "NODE_ENV=production DEBUG=app:* babel-node ./scripts/build.js",
     "build:deploy": "NODE_ENV=production DEBUG=app:* babel-node ./scripts/build.js && npm run deploy",
-    "test": "NODE_ENV=test mocha --recursive -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/**/*.spec.js",
     "test:coverage": "istanbul cover _mocha -- --require babel-register -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./src/**/**/*.spec.js",
     "deploy": "gh-pages-deploy",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "test": "NODE_ENV=test mocha --recursive -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./test/*.js",
+    "test:watch": "NODE_ENV=test mocha --watch --recursive -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./test/*.js"
   },
+  "pre-commit": [
+    "test",
+    "eslint"
+  ],
   "devDependencies": {
     "autoprefixer": "^6.5.1",
     "babel-core": "^6.18.0",
@@ -53,6 +58,7 @@
     "node-sass": "^3.4.2",
     "opn": "4.0.2",
     "postcss-loader": "0.9.1",
+    "react-addons-perf": "^15.4.2",
     "react-addons-test-utils": "^15.3.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "rimraf": "2.5.4",
