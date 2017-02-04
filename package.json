@@ -9,7 +9,9 @@
     "deploy": "gh-pages-deploy",
     "eslint": "eslint src",
     "test": "NODE_ENV=test mocha --recursive -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./test/*.js",
-    "test:watch": "NODE_ENV=test mocha --watch --recursive -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./test/*.js"
+    "test:watch": "NODE_ENV=test mocha --watch --recursive -r mock-local-storage --compilers js:babel-core/register,js:./src/helpers/css-modules-compiler.js ./test/*.js",
+    "lint": "jshint .",
+    "validate": "npm ls"
   },
   "pre-commit": [
     "test",
@@ -75,6 +77,7 @@
     "copy-webpack-plugin": "^4.0.0",
     "eslint-plugin-react": "^6.4.1",
     "lodash.debounce": "^4.0.8",
+    "precommit-hook": "^3.0.0",
     "promise": "7.1.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
